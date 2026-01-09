@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Viajes por País</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Botón Admin (esquina superior izquierda) -->
+    <div class="admin-button-container">
+        <button id="openAdminBtn" class="btn-admin">🔐 Admin</button>
+    </div>
+
+    <!-- Modal Login Admin -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content admin-modal-content">
+            <span class="close-modal" id="closeLoginModal">&times;</span>
+            <h2 style="color:#333;text-shadow: none;">🔐 Acceso Administrativo</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input type="password" id="adminPassword" placeholder="Ingresa la contraseña" required>
+                    <p style="font-size: 0.9rem;color:#666;margin-top:10px;">
+                        💡 Contraseña por defecto: <strong>admin123</strong>
+                    </p>
+                </div>
+                <button type="submit" class="btn-submit">Acceder</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Panel Admin -->
+    <div id="adminModal" class="modal admin-panel-modal">
+        <div class="modal-content admin-panel-content">
+            <span class="close-modal" id="closeAdminModal">&times;</span>
+            <h2 style="color:#333;text-shadow:none;">⚙️ Panel de Administración</h2>
+            
+            <!-- Tabs -->
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="upload">📤 Subir Fotos</button>
+                <button class="tab-btn" data-tab="manage">📋 Gestionar Fotos</button>
+                <button class="tab-btn" data-tab="export">💾 Exportar/Importar</button>
+            </div>
+
+            <!-- Tab:  Subir Fotos -->
+            <div class="tab-content active" id="uploadTab">
+                <form id="uploadPhotoForm">
+                    <div class="form-group">
+                        <label>País:</label>
+                        <select id="uploadCountry" required>
+                            <option value="">Selecciona un país</option>
+                            <option value="United States">United States</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="France">France</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Chile">Chile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Imagen:</label>
+                        <input type="file" id="uploadPhotoFile" accept="image/*" required>
+                        <div id="uploadPreview"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Título de la foto:</label>
+                        <input type="text" id="uploadPhotoTitle" placeholder="Ej: Torre Eiffel al atardecer" required>
+                    </div>
+                    <button type="submit" class="btn-submit">📤 Subir Foto</button>
+                </form>
+            </div>
+
+            <!-- Tab: Gestionar Fotos -->
+            <div class="tab-content" id="manageTab">
+                <div class="form-group">
+                    <label>Selecciona un país:</label>
+                    <select id="manageCountry">
+                        <option value="">Elige un país</option>
+                        <option value="United States">United States</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="France">France</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Chile">Chile</option>
+                    </select>
+                </div>
+                <div id="managePhotosContainer" class="manage-photos-grid"></div>
+            </div>
+
+            <!-- Tab: Exportar/Importar -->
+            <div class="tab-content" id="exportTab">
+                <div class="export-section">
+                    <h3>💾 Exportar Galería Completa</h3>
+                    <p>Descarga todas las fotos de tu galería en un archivo JSON</p>
+                    <button id="exportBtn" class="btn-action">📥 Descargar Galería (JSON)</button>
+                </div>
+                
+                <div class="export-section">
+                    <h3>📤 Importar Galería</h3>
+                    <p>Carga un archivo JSON previamente exportado</p>
+                    <input type="file" id="importFile" accept=".json">
+                    <button id="importBtn" class="btn-action">📤 Importar Galería</button>
+                </div>
+
+                <div class="export-section">
+                    <h3>🔄 Restaurar Galería Original</h3>
+                    <p>Volver a las fotos de ejemplo de Unsplash</p>
+                    <button id="resetBtn" class="btn-danger">⚠️ Restaurar Original</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Galería de País -->
+    <div id="countryModal" class="country-modal">
+        <div class="modal-header">
+            <h2 id="modalCountryName"></h2>
+            <span class="close-country-modal">&times;</span>
+        </div>
+        <div class="modal-gallery-container">
+            <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+            <div class="main-photo-display">
+                <img id="modalMainPhoto" src="" alt="">
+                <div class="photo-info">
+                    <span id="photoCounter"></span>
+                </div>
+            </div>
+            <button class="nav-btn next-btn" id="nextBtn">›</button>
+        </div>
+        <div class="thumbnails-container" id="thumbnailsContainer"></div>
+    </div>
+
+    <!-- Galería Principal -->
+    <section class="gallery">
+        <div class="flexbox-container">
+            <div class="flexbox-container">
+                <!-- Foto grande izquierda -->
+                <div class="half left top img-container">
+                    <a href="#" data-country="United States">
+                        <div class="photo-container wow fadeInLeft" data-wow-delay=".35s">
+                            <div class="pic-thumbnail"></div>
+                            <span>United States</span>
+                            <div class="click-hint">Click para ver galería →</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Lado derecho -->
+                <div class="half right bottom text-container">
+                    <h2>See Our Travel Destinations</h2>
+                    <p>Haz clic en cualquier destino para explorar su galería completa</p>
+                    
+                    <div class="gallery-icon-container">
+                        <!-- Columna 1 -->
+                        <div class="col-1">
+                            <a href="#" data-country="Spain">
+                                <div class="photo-container wow fadeInRight" data-wow-delay=".65s">
+                                    <div class="pic-thumbnail"></div>
+                                    <span>Spain</span>
+                                </div>
+                            </a>
+                            <a href="#" data-country="Italy">
+                                <div class="photo-container wow fadeInRight" data-wow-delay=".95s">
+                                    <div class="pic-thumbnail"></div>
+                                    <span>Italy</span>
+                                </div>
+                            </a>
+                            <a href="#" data-country="Portugal">
+                                <div class="photo-container wow fadeInRight" data-wow-delay="1.25s">
+                                    <div class="pic-thumbnail"></div>
+                                    <span>Portugal</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Columna 2 -->
+                        <div class="col-2">
+                            <a href="#" data-country="France">
+                                <div class="photo-container wow fadeInRight" data-wow-delay="1.55s">
+                                    <div class="pic-thumbnail"></div>
+                                    <span>France</span>
+                                </div>
+                            </a>
+                            <a href="#" data-country="Switzerland">
+                                <div class="photo-container wow fadeInRight" data-wow-delay="1.85s">
+                                    <div class="pic-thumbnail"></div>
+                                    <span>Switzerland</span>
+                                </div>
+                            </a>
+                            <a href="#" data-country="Chile">
+                                <div class="photo-container wow fadeInRight" data-wow-delay="2.15s">
+                                    <div class="pic-thumbnail"></div>
+                                    <span>Chile</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<!-- Configuración de Firebase -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDgiTAKdwHs2l2cKjM6ZgJGIu1NISYJLRU",
+    authDomain: "polaroid-gallery-dadec.firebaseapp.com",
+    projectId: "polaroid-gallery-dadec",
+    storageBucket: "polaroid-gallery-dadec.firebasestorage.app",
+    messagingSenderId: "458233223142",
+    appId: "1:458233223142:web: 0ac9779377bd3048c0e827"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  console.log('✅ Firebase inicializado correctamente');
+</script>
+
+<!-- ⚠️ IMPORTANTE: Este orden es crítico -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="firebase-gallery.js"></script>  <!-- ⬅️ PRIMERO este -->
+<script src="script.js"></script>            <!-- ⬅️ DESPUÉS este -->
+</body>
+</html>
