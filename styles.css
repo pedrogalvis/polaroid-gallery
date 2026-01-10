@@ -1077,6 +1077,262 @@ p {
     .manage-photos-grid {
         grid-template-columns: repeat(4, 1fr);
     }
+
+   /* ============================================
+   EFECTO POLAROID PARA TODAS LAS FOTOS
+   ============================================ */
+
+/* Aplicar a TODAS las fotos (grande y pequeñas) */
+.img-container . photo-container,
+.text-container .photo-container,
+.gallery-icon-container .photo-container {
+    background:  #fff ! important;
+    padding: 8px ! important;
+    box-shadow: 
+        0 3px 10px rgba(0,0,0,0.2),
+        0 6px 20px rgba(0,0,0,0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* Borde interno sutil */
+.img-container .pic-thumbnail,
+.text-container .pic-thumbnail,
+.gallery-icon-container .pic-thumbnail {
+    border: 1px solid #e5e5e5 !important;
+}
+
+/* ============================================
+   ROTACIONES INICIALES (reposo)
+   ============================================ */
+
+/* Foto grande United States */
+.img-container . photo-container {
+    transform: rotate(-1. 05deg);
+    padding: 12px 12px 40px 12px ! important;
+}
+
+/* Fotos pequeñas - rotaciones aleatorias */
+.gallery-icon-container .col-1 a: nth-of-type(1) .photo-container {
+    transform: rotate(-2.5deg);
+}
+
+.gallery-icon-container .col-1 a:nth-of-type(2) .photo-container {
+    transform: rotate(1.8deg);
+}
+
+.gallery-icon-container .col-1 a:nth-of-type(3) .photo-container {
+    transform: rotate(-1.2deg);
+}
+
+.gallery-icon-container .col-2 a:nth-of-type(1) .photo-container {
+    transform: rotate(2.2deg);
+}
+
+.gallery-icon-container .col-2 a:nth-of-type(2) .photo-container {
+    transform: rotate(-1.8deg);
+}
+
+.gallery-icon-container .col-2 a:nth-of-type(3) .photo-container {
+    transform: rotate(0.8deg);
+}
+
+/* ============================================
+   EFECTO HOVER - Levantamiento y Aumento
+   ============================================ */
+
+/* Foto grande - hover */
+.img-container . photo-container:hover {
+    transform: rotate(0deg) translateY(-12px) scale(1.05) !important;
+    box-shadow:   
+        0 15px 35px rgba(0,0,0,0.3),
+        0 20px 50px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+/* Fotos pequeñas - hover */
+. gallery-icon-container .photo-container:hover {
+    transform:  rotate(0deg) translateY(-10px) scale(1.12) !important;
+    box-shadow:  
+        0 12px 30px rgba(0,0,0,0.3),
+        0 18px 45px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+/* ============================================
+   EFECTO ACTIVE - Hundimiento al hacer CLICK
+   ============================================ */
+
+/* Foto grande - click */
+.img-container .photo-container: active {
+    transform: rotate(0deg) translateY(-3px) scale(1.02) !important;
+    box-shadow:  
+        0 5px 15px rgba(0,0,0,0.25),
+        0 8px 25px rgba(0,0,0,0.15);
+    transition: all 0.1s ease ! important;
+}
+
+/* Fotos pequeñas - click */
+.gallery-icon-container .photo-container:active {
+    transform: rotate(0deg) translateY(-2px) scale(1.05) !important;
+    box-shadow:  
+        0 4px 12px rgba(0,0,0,0.25),
+        0 6px 20px rgba(0,0,0,0.15);
+    transition: all 0.1s ease !important;
+}
+
+/* ============================================
+   EFECTO DE BRILLO AL HOVER
+   ============================================ */
+
+. img-container .photo-container:: after,
+.gallery-icon-container .photo-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:  0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.5) 0%,
+        rgba(255,255,255,0) 60%
+    );
+    opacity: 0;
+    transition:  opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 2px;
+}
+
+.img-container .photo-container:hover::after,
+.gallery-icon-container .photo-container:hover::after {
+    opacity: 1;
+}
+
+/* ============================================
+   ANIMACIÓN DE ENTRADA (flotando)
+   ============================================ */
+
+.photo-container {
+    animation: gentleFloat 0.8s ease-out backwards;
+}
+
+@keyframes gentleFloat {
+    from {
+        opacity: 0;
+        transform:  translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   TEXTO (nombre del país) - Mejorado
+   ============================================ */
+
+.img-container span,
+.gallery-icon-container span {
+    font-family: 'Caveat', cursive;
+    color: #555;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.photo-container:hover span {
+    color: #333;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   CLICK HINT - Mejorado
+   ============================================ */
+
+.click-hint {
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #667eea;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0;
+    transition:  opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+    z-index: 3;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.photo-container:hover .click-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE - Ajustes para móvil
+   ============================================ */
+
+@media only screen and (max-width: 768px) {
+    /* En móvil, reducir efectos para mejor rendimiento */
+    .img-container .photo-container:hover {
+        transform: rotate(0deg) translateY(-8px) scale(1.03) !important;
+    }
+    
+    .gallery-icon-container .photo-container:hover {
+        transform: rotate(0deg) translateY(-6px) scale(1.08) !important;
+    }
+    
+    .click-hint {
+        font-size: 0.75rem;
+        bottom: 35px;
+    }
+}
+
+/* ============================================
+   ESTADOS DE CARGA - Pulse suave
+   ============================================ */
+
+@keyframes softPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Aplicar pulse muy sutil en reposo (opcional) */
+.photo-container {
+    animation: softPulse 4s ease-in-out infinite;
+}
+
+. photo-container:hover {
+    animation: none;
+}
+
+/* ============================================
+   MEJORA DE SOMBRAS SEGÚN EL CONTEXTO
+   ============================================ */
+
+/* Sombra más pronunciada para la foto grande */
+.img-container .photo-container {
+    box-shadow: 
+        0 4px 15px rgba(0,0,0,0.25),
+        0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* Sombras más suaves para fotos pequeñas */
+.gallery-icon-container .photo-container {
+    box-shadow: 
+        0 2px 8px rgba(0,0,0,0.15),
+        0 4px 15px rgba(0,0,0,0.1);
+}
 /* ============================================
    POLAROID MEJORADO PARA GALERÍA DE PAÍSES
    ============================================ */
