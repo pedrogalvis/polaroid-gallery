@@ -23,97 +23,98 @@
                 <div class="form-group">
                     <label>Contraseña:</label>
                     <input type="password" id="adminPassword" placeholder="Ingresa la contraseña" required>
-                    
+                    <p style="font-size: 0.9rem;color:#666;margin-top:10px;">
+                        💡 Contraseña por defecto: <strong>admin123</strong>
+                    </p>
                 </div>
                 <button type="submit" class="btn-submit">Acceder</button>
             </form>
         </div>
     </div>
 
- 
-<!-- Modal Panel Admin -->
-<div id="adminModal" class="modal admin-panel-modal">
-    <div class="modal-content admin-panel-content">
-        <span class="close-modal" id="closeAdminModal">&times;</span>
-        <h2 style="color:#333;text-shadow:none;">⚙️ Panel de Administración</h2>
-        
-        <!-- Tabs -->
-        <div class="admin-tabs">
-            <button class="tab-btn active" data-tab="upload">📤 Subir Fotos</button>
-            <button class="tab-btn" data-tab="manage">📋 Gestionar Fotos</button>
-            <button class="tab-btn" data-tab="export">💾 Exportar/Importar</button>
-        </div>
+    <!-- Modal Panel Admin -->
+    <div id="adminModal" class="modal admin-panel-modal">
+        <div class="modal-content admin-panel-content">
+            <span class="close-modal" id="closeAdminModal">&times;</span>
+            <h2 style="color:#333;text-shadow:none;">⚙️ Panel de Administración</h2>
+            
+            <!-- Tabs -->
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="upload">📤 Subir Fotos</button>
+                <button class="tab-btn" data-tab="manage">📋 Gestionar Fotos</button>
+                <button class="tab-btn" data-tab="export">💾 Exportar/Importar</button>
+            </div>
 
-        <!-- Tab:  Subir Fotos -->
-        <div class="tab-content active" id="uploadTab">
-            <form id="uploadPhotoForm">
+            <!-- Tab:  Subir Fotos -->
+            <div class="tab-content active" id="uploadTab">
+                <form id="uploadPhotoForm">
+                    <div class="form-group">
+                        <label>País:</label>
+                        <select id="uploadCountry" required>
+                            <option value="">Selecciona un país</option>
+                            <option value="United States">United States</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="France">France</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Chile">Chile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Imagen:</label>
+                        <input type="file" id="uploadPhotoFile" accept="image/*" required>
+                        <div id="uploadPreview"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Título de la foto:</label>
+                        <input type="text" id="uploadPhotoTitle" placeholder="Ej: Torre Eiffel al atardecer" required>
+                    </div>
+                    <button type="submit" class="btn-submit">📤 Subir Foto</button>
+                </form>
+            </div>
+
+            <!-- Tab: Gestionar Fotos -->
+            <div class="tab-content" id="manageTab">
                 <div class="form-group">
-                    <label>País:</label>
-                    <select id="uploadCountry" required>
-                        <option value="">Selecciona un país</option>
-                        <option value="United States">🇺🇸 United States</option>
-                        <option value="Spain">🇪🇸 Spain</option>
-                        <option value="Italy">🇮🇹 Italy</option>
-                        <option value="Portugal">🇵🇹 Portugal</option>
-                        <option value="France">🇫🇷 France</option>
-                        <option value="Switzerland">🇨🇭 Switzerland</option>
-                        <option value="Chile">🇨🇱 Chile</option>
+                    <label>Selecciona un país:</label>
+                    <select id="manageCountry">
+                        <option value="">Elige un país</option>
+                        <option value="United States">United States</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="France">France</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Chile">Chile</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Imagen:</label>
-                    <input type="file" id="uploadPhotoFile" accept="image/*" required>
-                    <div id="uploadPreview"></div>
+                <div id="managePhotosContainer" class="manage-photos-grid"></div>
+            </div>
+
+            <!-- Tab: Exportar/Importar -->
+            <div class="tab-content" id="exportTab">
+                <div class="export-section">
+                    <h3>💾 Exportar Galería Completa</h3>
+                    <p>Descarga todas las fotos de tu galería en un archivo JSON</p>
+                    <button id="exportBtn" class="btn-action">📥 Descargar Galería (JSON)</button>
                 </div>
-                <div class="form-group">
-                    <label>Título de la foto:</label>
-                    <input type="text" id="uploadPhotoTitle" placeholder="Ej: Torre Eiffel al atardecer" required>
+                
+                <div class="export-section">
+                    <h3>📤 Importar Galería</h3>
+                    <p>Carga un archivo JSON previamente exportado</p>
+                    <input type="file" id="importFile" accept=".json">
+                    <button id="importBtn" class="btn-action">📤 Importar Galería</button>
                 </div>
-                <button type="submit" class="btn-submit">📤 Subir Foto</button>
-            </form>
-        </div>
 
-        <!-- Tab: Gestionar Fotos -->
-        <div class="tab-content" id="manageTab">
-            <div class="form-group">
-                <label>Selecciona un país:</label>
-                <select id="manageCountry">
-                    <option value="">Elige un país</option>
-                    <option value="United States">🇺🇸 United States</option>
-                    <option value="Spain">🇪🇸 Spain</option>
-                    <option value="Italy">🇮🇹 Italy</option>
-                    <option value="Portugal">🇵🇹 Portugal</option>
-                    <option value="France">🇫🇷 France</option>
-                    <option value="Switzerland">🇨🇭 Switzerland</option>
-                    <option value="Chile">🇨🇱 Chile</option>
-                </select>
-            </div>
-            <div id="managePhotosContainer" class="manage-photos-grid"></div>
-        </div>
-
-        <!-- Tab: Exportar/Importar -->
-        <div class="tab-content" id="exportTab">
-            <div class="export-section">
-                <h3>💾 Exportar Galería Completa</h3>
-                <p>Descarga todas las fotos de tu galería en un archivo JSON</p>
-                <button id="exportBtn" class="btn-action">📥 Descargar Galería (JSON)</button>
-            </div>
-            
-            <div class="export-section">
-                <h3>📤 Importar Galería</h3>
-                <p>Carga un archivo JSON previamente exportado</p>
-                <input type="file" id="importFile" accept=".json">
-                <button id="importBtn" class="btn-action">📤 Importar Galería</button>
-            </div>
-
-            <div class="export-section">
-                <h3>🔄 Restaurar Galería Original</h3>
-                <p>Volver a las fotos de ejemplo de Unsplash</p>
-                <button id="resetBtn" class="btn-danger">⚠️ Restaurar Original</button>
+                <div class="export-section">
+                    <h3>🔄 Restaurar Galería Original</h3>
+                    <p>Volver a las fotos de ejemplo de Unsplash</p>
+                    <button id="resetBtn" class="btn-danger">⚠️ Restaurar Original</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- Modal Galería de País -->
     <div id="countryModal" class="country-modal">
@@ -210,15 +211,14 @@
 
 <!-- Configuración de Firebase -->
 <script>
- const firebaseConfig = {
-  apiKey: "AIzaSyDoQA0AaIdi9h7Tm_H59BK_LHKo6mp44GA",
-  authDomain: "polaroid-gallery-f7728.firebaseapp.com",
-  projectId: "polaroid-gallery-f7728",
-  storageBucket: "polaroid-gallery-f7728.firebasestorage.app",
-  messagingSenderId: "868276278114",
-  appId: "1:868276278114:web:315c4a7d0254c49a13d23b"
-};
-
+  const firebaseConfig = {
+    apiKey: "AIzaSyDgiTAKdwHs2l2cKjM6ZgJGIu1NISYJLRU",
+    authDomain: "polaroid-gallery-dadec.firebaseapp.com",
+    projectId: "polaroid-gallery-dadec",
+    storageBucket: "polaroid-gallery-dadec.firebasestorage.app",
+    messagingSenderId: "458233223142",
+    appId: "1:458233223142:web: 0ac9779377bd3048c0e827"
+  };
   
   firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
