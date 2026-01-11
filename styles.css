@@ -340,14 +340,14 @@ p {
     animation-delay: 0.2s;
 }
 
-. gallery-icon-container a:nth-child(3) .photo-container {
+.gallery-icon-container a:nth-child(3) .photo-container {
     transform: rotate(-1.2deg);
-    animation-delay: 0.3s;
+    animation-delay:  0.3s;
 }
 
 .gallery-icon-container a:nth-child(4) .photo-container {
-    transform: rotate(2.2deg);
-    animation-delay:  0.4s;
+    transform:  rotate(2.2deg);
+    animation-delay: 0.4s;
 }
 
 .gallery-icon-container a:nth-child(5) .photo-container {
@@ -392,19 +392,19 @@ p {
 }
 
 /* Efecto de brillo al hover */
-.gallery-icon-container . photo-container:: before {
+.gallery-icon-container . photo-container::before {
     content: '';
     position: absolute;
     top: 0;
-    left:  0;
+    left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 60%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition:  opacity 0.3s ease;
     pointer-events: none;
     border-radius: 2px;
-    z-index: 1;
+    z-index:  1;
 }
 
 .gallery-icon-container .photo-container:hover::before {
@@ -412,14 +412,14 @@ p {
 }
 
 /* Texto se agranda al hover */
-.gallery-icon-container .photo-container:hover span {
+.gallery-icon-container . photo-container:hover span {
     color: #222;
     transform: scale(1.08);
     text-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
 .gallery-icon-container a:hover span {
-    color:  #333;
+    color: #333;
 }
 /* ============================================
    ANIMACIONES
