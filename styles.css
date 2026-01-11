@@ -121,95 +121,130 @@ p {
 }
 
 /* ============================================
-   GALERÍA DE ÍCONOS
+   GALERÍA GRID - 3 COLUMNAS RESPONSIVO
    ============================================ */
-.gallery-icon-container {
-    display: flex;
-    flex-direction: row;  /* ⬅️ CAMBIO: row en lugar de column */
-    justify-content: center;
-    align-items: flex-start;  /* ⬅️ Alinear arriba */
-    gap: 0.5rem;  /* ⬅️ Espacio entre columnas */
-    flex-wrap: wrap;  /* ⬅️ Permite envolver en pantallas pequeñas */
-}
 
-.col-1, .col-2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 0.5rem;
+.gallery-icon-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columnas iguales */
+    gap: 1rem;  /* Espacio entre fotos */
+    justify-items: center;
+    align-items: start;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .gallery-icon-container a {
-    margin: . 35rem . 25rem;
+    margin: 0;
     text-decoration: none;
+    display: block;
+    width: 100%;
 }
 
-.gallery-icon-container . pic-thumbnail {
+/* Eliminar estilos antiguos de col-1, col-2, col-3 */
+.col-1, .col-2, .col-3 {
+    display: contents;  /* Hace que se ignoren las columnas */
+}
+
+/* ============================================
+   IMÁGENES DE FONDO - SIMPLIFICADAS
+   ============================================ */
+
+.gallery-icon-container .pic-thumbnail {
     background-size: cover;
+    background-position: center;
     margin-right: 0;
 }
 
-.gallery-icon-container . col-1 a: nth-of-type(1) .pic-thumbnail {
+/* Usar nth-child en lugar de col-x a: nth-of-type */
+.gallery-icon-container a:nth-child(1) .pic-thumbnail {
     background:  url("https://images.unsplash.com/photo-1495653089282-38a5286a8583?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80");
     background-position: center 55%;
     background-size: cover;
 }
 
-.gallery-icon-container . col-1 a:nth-of-type(2) .pic-thumbnail {
-    background: url("https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80");
+.gallery-icon-container a:nth-child(2) .pic-thumbnail {
+    background:  url("https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80");
     background-position: center center;
     background-size: cover;
 }
 
-.gallery-icon-container .col-1 a:nth-of-type(3) .pic-thumbnail {
+.gallery-icon-container a:nth-child(3) .pic-thumbnail {
     background: url("https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1484&q=80");
     background-position: 75% center;
     background-size: cover;
 }
 
-.gallery-icon-container .col-2 a:nth-of-type(1) .pic-thumbnail {
+.gallery-icon-container a:nth-child(4) .pic-thumbnail {
     background: url("https://images.unsplash.com/photo-1572907564143-ee1ef5882732?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=785&q=80");
     background-position: center center;
-    background-size: cover;
+    background-size:  cover;
 }
 
-.gallery-icon-container .col-2 a:nth-of-type(2) .pic-thumbnail {
+.gallery-icon-container a:nth-child(5) .pic-thumbnail {
     background: url("https://images.unsplash.com/photo-1528493366314-e317cd98dd52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80");
     background-position: 25% center;
     background-size: cover;
 }
 
-.gallery-icon-container .col-2 a:nth-of-type(3) .pic-thumbnail {
+.gallery-icon-container a:nth-child(6) .pic-thumbnail {
     background: url("https://images.unsplash.com/photo-1603382585507-45205571d760?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
     background-position: center center;
-    background-size:  cover;
-}
-
-. text-container . photo-container {
-    padding: 4px;
-    background: #fff;
-    width:  110px;
-    box-shadow: rgba(0,0,0,.25) 0px 0px 20px 0px;
-    position: relative;
-}
-
-.text-container .pic-thumbnail {
-    width: 108px;
-    height: 108px;
-    margin-bottom: . 35rem;
-    border: 1px solid #cecece;
     background-size: cover;
 }
 
-.gallery-icon-container span {
-    margin-bottom: .35rem;
-    display: inline-block;
-    font-size: 1.1rem;
-    font-family: 'Caveat', cursive;
-    color: #555555;
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
+/* NUEVOS PAÍSES */
+.gallery-icon-container a:nth-child(7) .pic-thumbnail {
+    background: url("https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
+    background-position: center center;
+    background-size: cover;
+}
+
+.gallery-icon-container a:nth-child(8) .pic-thumbnail {
+    background:  url("https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
+    background-position: center center;
+    background-size: cover;
+}
+
+.gallery-icon-container a:nth-child(9) .pic-thumbnail {
+    background:  url("https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
+    background-position: center center;
+    background-size: cover;
+}
+
+/* ============================================
+   ROTACIONES POLAROID - SIMPLIFICADAS
+   ============================================ */
+
+.gallery-icon-container a:nth-child(1) .photo-container { transform: rotate(-2. 5deg); }
+.gallery-icon-container a:nth-child(2) .photo-container { transform: rotate(1.8deg); }
+.gallery-icon-container a:nth-child(3) .photo-container { transform: rotate(-1.2deg); }
+.gallery-icon-container a:nth-child(4) .photo-container { transform: rotate(2.2deg); }
+.gallery-icon-container a:nth-child(5) .photo-container { transform: rotate(-1.8deg); }
+.gallery-icon-container a:nth-child(6) .photo-container { transform: rotate(0.8deg); }
+.gallery-icon-container a:nth-child(7) .photo-container { transform: rotate(-2.2deg); }
+.gallery-icon-container a:nth-child(8) .photo-container { transform: rotate(1.5deg); }
+.gallery-icon-container a:nth-child(9) .photo-container { transform: rotate(-0.8deg); }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* TABLET - 2 columnas */
+@media only screen and (max-width: 1024px) {
+    .gallery-icon-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1. 5rem;
+    }
+}
+
+/* MÓVIL - 1 columna */
+@media only screen and (max-width: 768px) {
+    .gallery-icon-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 400px;
+    }
 }
 
 /* ============================================
