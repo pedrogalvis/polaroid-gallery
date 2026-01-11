@@ -182,9 +182,9 @@ p {
    ============================================ */
 .text-container .photo-container,
 .gallery-icon-container .photo-container {
-    background: #ffffff !important;
-    padding: 10px 10px 45px 10px !important;
-    width: 120px ! important;
+    background:  #ffffff !important;
+    padding: 8px 8px 40px 8px !important;
+    width: 140px !important;
     box-shadow: 
         0 2px 8px rgba(0,0,0,0.15),
         0 4px 20px rgba(0,0,0,0.1);
@@ -193,26 +193,15 @@ p {
     cursor: pointer;
     border-radius: 2px;
     animation: floatIn 0.6s ease-out backwards;
-    margin: 0 auto;
-}
-
-.text-container . pic-thumbnail,
-.gallery-icon-container .pic-thumbnail {
-    width: 100px ! important;
-    height: 100px !important;
-    background-size: cover !important;
-    background-position: center !important;
-    border:  1px solid #e0e0e0 !important;
-    margin-bottom: 0;
-    display: block;
+    margin:  0 auto;
 }
 
 .gallery-icon-container span {
-    margin-top: 8px;
-    margin-bottom: 0;
+    margin-top: 6px;
+    margin-bottom:  0;
     display: block;
-    font-size: 1.1rem;
-    font-family: 'Caveat', cursive;
+    font-size: 1.15rem;
+    font-family:  'Caveat', cursive;
     color: #555555;
     width: 100%;
     text-align: center;
@@ -282,16 +271,15 @@ p {
    ============================================ */
 .text-container .pic-thumbnail,
 .gallery-icon-container .pic-thumbnail {
-    width: 100px !important;
-    height: 100px !important;
+    width: 124px !important;
+    height:  124px !important;
     background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+    background-position: center ! important;
+    background-repeat:  no-repeat !important;
     border: 1px solid #e0e0e0 ! important;
-    margin-bottom:  0 !important;
+    margin:  0 auto !important;
     display: block !important;
 }
-
 /* SPAIN */
 .gallery-icon-container a:nth-child(1) .pic-thumbnail {
     background-image: url("https://images.unsplash.com/photo-1495653089282-38a5286a8583?w=400") !important;
