@@ -268,9 +268,9 @@ p {
 /* ============================================
    IMÁGENES VISIBLES EN CADA PAÍS
    ============================================ */
-.text-container . pic-thumbnail,
+.text-container .pic-thumbnail,
 .gallery-icon-container .pic-thumbnail {
-    width: 124px ! important;
+    width:  124px ! important;
     height: 124px !important;
     background-size: cover !important;
     background-position: center !important;
@@ -304,7 +304,7 @@ p {
 
 /* SWITZERLAND */
 .gallery-icon-container a:nth-child(5) .pic-thumbnail {
-    background-image:  url("https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400") !important;
+    background-image: url("https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400") !important;
 }
 
 /* CHILE */
@@ -328,28 +328,28 @@ p {
 }
 
 /* ROTACIONES POLAROID */
-. gallery-icon-container a:nth-child(1) .photo-container {
+.gallery-icon-container a:nth-child(1) .photo-container {
     transform: rotate(-2.5deg);
     animation-delay: 0.1s;
 }
 
-. gallery-icon-container a:nth-child(2) .photo-container {
+.gallery-icon-container a:nth-child(2) .photo-container {
     transform: rotate(1.8deg);
     animation-delay: 0.2s;
 }
 
-.gallery-icon-container a:nth-child(3) .photo-container {
+. gallery-icon-container a:nth-child(3) .photo-container {
     transform: rotate(-1.2deg);
-    animation-delay:  0.3s;
+    animation-delay: 0.3s;
 }
 
 .gallery-icon-container a:nth-child(4) .photo-container {
-    transform:  rotate(2.2deg);
-    animation-delay: 0.4s;
+    transform: rotate(2.2deg);
+    animation-delay:  0.4s;
 }
 
 .gallery-icon-container a:nth-child(5) .photo-container {
-    transform: rotate(-1.8deg);
+    transform:  rotate(-1.8deg);
     animation-delay: 0.5s;
 }
 
@@ -374,32 +374,32 @@ p {
 }
 
 /* EFECTO HOVER */
-.gallery-icon-container . photo-container:hover {
+.gallery-icon-container .photo-container:hover {
     transform: rotate(0deg) translateY(-15px) scale(1.15) !important;
     box-shadow: 0 15px 40px rgba(0,0,0,0.35), 0 20px 60px rgba(0,0,0,0.25);
     z-index: 100;
     animation: none !important;
 }
 
-.gallery-icon-container .photo-container:active {
+.gallery-icon-container . photo-container:active {
     transform: rotate(0deg) translateY(-5px) scale(1.08) !important;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 12px 30px rgba(0,0,0,0.2);
-    transition: all 0.15s ease !important;
+    transition: all 0.15s ease ! important;
 }
 
-. gallery-icon-container .photo-container::before {
-    content:  '';
+.gallery-icon-container . photo-container::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom:  0;
+    bottom: 0;
     background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 60%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition:  opacity 0.3s ease;
     pointer-events: none;
     border-radius: 2px;
-    z-index: 1;
+    z-index:  1;
 }
 
 .gallery-icon-container .photo-container:hover::before {
