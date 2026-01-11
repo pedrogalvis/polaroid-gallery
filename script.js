@@ -5,28 +5,28 @@
 // Contraseña admin (puedes cambiarla)
 const ADMIN_PASSWORD = 'admin123';
 
-// Base de datos de fotos original (Unsplash)
+// Base de datos de fotos original (Unsplash) - ACTUALIZADA CON 10 PAÍSES
 const originalGalleryData = {
     "United States": [
         { url: "https://images.unsplash.com/photo-1540155945626-66eacf57fcb9?w=800", title: "Hollywood Sign, Los Angeles" },
         { url: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=800", title: "Golden Gate Bridge" },
         { url: "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=800", title: "New York City" },
         { url: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800", title: "Miami Beach" },
-        { url:   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", title:  "Grand Canyon" }
+        { url:  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", title:  "Grand Canyon" }
     ],
     "Spain":  [
         { url: "https://images.unsplash.com/photo-1495653089282-38a5286a8583?w=800", title: "Alhambra, Granada" },
         { url: "https://images.unsplash.com/photo-1558642891-54be180ea339?w=800", title: "Barcelona Skyline" },
-        { url:   "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800", title: "Madrid Royal Palace" },
-        { url:   "https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=800", title: "Seville Cathedral" },
+        { url:  "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800", title: "Madrid Royal Palace" },
+        { url:  "https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=800", title: "Seville Cathedral" },
         { url:  "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800", title: "Valencia City" }
     ],
     "Italy": [
-        { url: "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=800", title: "Vernazza, Cinque Terre" },
+        { url:  "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=800", title: "Vernazza, Cinque Terre" },
         { url: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800", title: "Colosseum, Rome" },
         { url: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800", title: "Venice Canals" },
         { url: "https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800", title: "Florence Duomo" },
-        { url: "https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=800", title:   "Amalfi Coast" }
+        { url: "https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=800", title:  "Amalfi Coast" }
     ],
     "Portugal": [
         { url: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=800", title: "Benagil Cave, Algarve" },
@@ -36,25 +36,46 @@ const originalGalleryData = {
         { url: "https://images.unsplash.com/photo-1588963014962-e6f45c7c7fc7?w=800", title: "Lagos Beach" }
     ],
     "France": [
-        { url:   "https://images.unsplash.com/photo-1572907564143-ee1ef5882732?w=800", title: "Lavender Fields, Provence" },
+        { url:  "https://images.unsplash.com/photo-1572907564143-ee1ef5882732?w=800", title: "Lavender Fields, Provence" },
         { url: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=800", title: "Eiffel Tower, Paris" },
         { url: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800", title: "Arc de Triomphe" },
-        { url: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800", title:   "Paris Streets" },
+        { url: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800", title:  "Paris Streets" },
         { url: "https://images.unsplash.com/photo-1549144511-f099e773c147?w=800", title: "Mont Saint-Michel" }
     ],
     "Switzerland": [
         { url: "https://images.unsplash.com/photo-1528493366314-e317cd98dd52?w=800", title: "Matterhorn, Zermatt" },
-        { url:   "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800", title: "Swiss Alps" },
-        { url:   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", title: "Lake Lucerne" },
-        { url:  "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800", title: "Interlaken" },
-        { url: "https://images.unsplash.com/photo-1548678967-f1aec58f6fb2?w=800", title:  "Zurich City" }
+        { url: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800", title: "Swiss Alps" },
+        { url:  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", title: "Lake Lucerne" },
+        { url: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800", title: "Interlaken" },
+        { url: "https://images.unsplash.com/photo-1548678967-f1aec58f6fb2?w=800", title: "Zurich City" }
     ],
     "Chile": [
-        { url: "https://images.unsplash.com/photo-1603382585507-45205571d760?w=800", title: "Torres del Paine" },
+        { url:  "https://images.unsplash.com/photo-1603382585507-45205571d760?w=800", title: "Torres del Paine" },
         { url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", title: "Atacama Desert" },
         { url: "https://images.unsplash.com/photo-1591802020165-c0a1eba35c52?w=800", title: "Santiago Skyline" },
-        { url:   "https://images.unsplash.com/photo-1570737231183-4c162a1cb0f4?w=800", title: "Valparaíso Streets" },
+        { url:  "https://images.unsplash.com/photo-1570737231183-4c162a1cb0f4?w=800", title: "Valparaíso Streets" },
         { url: "https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=800", title: "Chilean Fjords" }
+    ],
+    "Turkiye": [
+        { url: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800", title: "Hot Air Balloons, Cappadocia" },
+        { url: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800", title: "Hagia Sophia, Istanbul" },
+        { url: "https://images.unsplash.com/photo-1564424224827-cd24a459efb6?w=800", title: "Pamukkale Terraces" },
+        { url:  "https://images.unsplash.com/photo-1577926569966-e8d7a8e5d0c0?w=800", title: "Blue Mosque, Istanbul" },
+        { url: "https://images.unsplash.com/photo-1605627079912-1e3e8b6e9c3b?w=800", title:  "Ephesus Ancient City" }
+    ],
+    "Brazil": [
+        { url: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800", title: "Christ the Redeemer, Rio" },
+        { url: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800", title: "Ipanema Beach, Rio" },
+        { url: "https://images.unsplash.com/photo-1548013146-72479768bada?w=800", title: "Amazon Rainforest" },
+        { url: "https://images.unsplash.com/photo-1621532148672-30ed695e8cb3?w=800", title:  "Iguazu Falls" },
+        { url: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800", title: "São Paulo Skyline" }
+    ],
+    "Singapur": [
+        { url: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800", title: "Marina Bay Sands" },
+        { url: "https://images.unsplash.com/photo-1562786101-ee1fc6461454?w=800", title: "Gardens by the Bay" },
+        { url: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=800", title: "Merlion Park" },
+        { url: "https://images.unsplash.com/photo-1590947194033-77582a5de990?w=800", title: "Chinatown Singapore" },
+        { url: "https://images.unsplash.com/photo-1551844931-59df97ec1f77?w=800", title: "Singapore Skyline Night" }
     ]
 };
 
@@ -64,7 +85,7 @@ function getGalleryData() {
 }
 
 function saveGalleryData(data) {
-    localStorage.setItem('galleryData', JSON.stringify(data));
+    localStorage.setItem('galleryData', JSON. stringify(data));
 }
 
 function showToast(message, type = 'success') {
@@ -121,6 +142,7 @@ let galleryData = {};
         galleryData = JSON.parse(JSON.stringify(originalGalleryData));
     }
 })();
+
 let currentCountry = '';
 let currentPhotoIndex = 0;
 
@@ -131,11 +153,11 @@ const modalCountryName = document.getElementById('modalCountryName');
 const photoCounter = document.getElementById('photoCounter');
 const thumbnailsContainer = document.getElementById('thumbnailsContainer');
 const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document. getElementById('nextBtn');
+const nextBtn = document.getElementById('nextBtn');
 const openAdminBtn = document.getElementById('openAdminBtn');
 const loginModal = document.getElementById('loginModal');
 const closeLoginModal = document.getElementById('closeLoginModal');
-const loginForm = document.getElementById('loginForm');
+const loginForm = document. getElementById('loginForm');
 const adminModal = document.getElementById('adminModal');
 const closeAdminModal = document.getElementById('closeAdminModal');
 
@@ -217,13 +239,13 @@ closeCountryModalBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('click', (e) => {
-    if (e.target === countryModal) closeCountryModalBtn.click();
+    if (e. target === countryModal) closeCountryModalBtn.click();
     if (e.target === loginModal) closeLoginModal.click();
     if (e.target === adminModal) closeAdminModal.click();
 });
 
 openAdminBtn.addEventListener('click', () => {
-    loginModal.style.display = 'block';
+    loginModal. style.display = 'block';
 });
 
 closeLoginModal.addEventListener('click', () => {
@@ -255,7 +277,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
         btn.classList.add('active');
-        const tabId = btn. dataset.tab + 'Tab';
+        const tabId = btn.dataset.tab + 'Tab';
         const tabElement = document.getElementById(tabId);
         if (tabElement) tabElement.classList.add('active');
     });
@@ -273,7 +295,7 @@ if (uploadPhotoFile) {
         }
         
         if (file.size > 5 * 1024 * 1024) {
-            showToast('Imagen muy grande.   Máximo 5MB', 'error');
+            showToast('Imagen muy grande.  Máximo 5MB', 'error');
             this.value = '';
             previewContainer.innerHTML = '';
             return;
@@ -321,7 +343,7 @@ if (uploadPhotoForm) {
         
         const submitBtn = e.target.querySelector('button[type="submit"]');
         const country = document.getElementById('uploadCountry').value;
-        const file = document.getElementById('uploadPhotoFile').files[0];
+        const file = document. getElementById('uploadPhotoFile').files[0];
         const title = document.getElementById('uploadPhotoTitle').value.trim();
         
         if (! country) {
@@ -340,7 +362,7 @@ if (uploadPhotoForm) {
         }
         
         setButtonLoading(submitBtn, true);
-        showToast('Comprimiendo imagen... ', 'info');
+        showToast('Comprimiendo imagen...', 'info');
         
         try {
             // Comprimir imagen
@@ -349,7 +371,7 @@ if (uploadPhotoForm) {
             // Verificar tamaño final
             const sizeKB = compressedImage.length / 1024;
             if (sizeKB > 900) {
-                showToast('⚠️ Imagen muy grande.  Usa una foto más pequeña.', 'warning');
+                showToast('⚠️ Imagen muy grande. Usa una foto más pequeña. ', 'warning');
                 setButtonLoading(submitBtn, false);
                 return;
             }
@@ -369,7 +391,7 @@ if (uploadPhotoForm) {
                         <img src="${compressedImage}" alt="${title}">
                         <p><strong>País:</strong> ${country}</p>
                         <p><strong>Título:</strong> ${title}</p>
-                        <p><strong>Tamaño:</strong> ${sizeKB.toFixed(0)} KB</p>
+                        <p><strong>Tamaño:</strong> ${sizeKB. toFixed(0)} KB</p>
                         <p style="margin-top: 15px; font-size: 0.9rem;">
                             Total de fotos en ${country}: <strong>${galleryData[country].length}</strong>
                         </p>
@@ -411,7 +433,7 @@ if (manageCountry) {
         const photos = galleryData[country];
         
         if (photos.length === 0) {
-            container.innerHTML = `<div class="empty-state-manage"><p style="font-size: 3rem;">📷</p><p>No hay fotos en ${country}</p><p style="font-size: 0.9rem; margin-top: 10px;">Ve a la pestaña "Subir Fotos" para añadir imágenes</p></div>`;
+            container.innerHTML = `<div class="empty-state-manage"><p style="font-size:  3rem;">📷</p><p>No hay fotos en ${country}</p><p style="font-size: 0.9rem; margin-top: 10px;">Ve a la pestaña "Subir Fotos" para añadir imágenes</p></div>`;
             return;
         }
         
@@ -465,7 +487,7 @@ window.deletePhoto = async function(country, index) {
                     loadGalleryPhotos();
                 } else {
                     countryModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
+                    document. body.style.overflow = 'auto';
                 }
             }
         }
@@ -496,7 +518,7 @@ const importBtn = document.getElementById('importBtn');
 if (importBtn) {
     importBtn.addEventListener('click', () => {
         const file = document.getElementById('importFile').files[0];
-        if (!file) {
+        if (! file) {
             showToast('Selecciona un archivo JSON primero', 'warning');
             return;
         }
@@ -506,15 +528,15 @@ if (importBtn) {
         reader.onload = function(e) {
             try {
                 const imported = JSON.parse(e.target.result);
-                const requiredCountries = ["United States", "Spain", "Italy", "Portugal", "France", "Switzerland", "Chile"];
+                const requiredCountries = ["United States", "Spain", "Italy", "Portugal", "France", "Switzerland", "Chile", "Turkiye", "Brazil", "Singapur"];
                 const isValid = requiredCountries.every(country => imported[country] && Array.isArray(imported[country]));
                 
-                if (!isValid) throw new Error('Estructura de archivo inválida');
+                if (! isValid) throw new Error('Estructura de archivo inválida');
                 
                 galleryData = imported;
                 saveGalleryData(galleryData);
                 setButtonLoading(importBtn, false);
-                showToast('¡Galería importada!  Recargando...', 'success');
+                showToast('¡Galería importada!  Recargando... ', 'success');
                 setTimeout(() => location.reload(), 1500);
             } catch (error) {
                 setButtonLoading(importBtn, false);
@@ -544,7 +566,7 @@ if (resetBtn) {
 // FUNCIONALIDAD DE TABS
 // ============================================
 
-document.querySelectorAll('.tab-btn').forEach(btn => {
+document. querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const tabName = this.getAttribute('data-tab');
         
@@ -587,7 +609,7 @@ async function loadManagePhotos() {
     
     container.innerHTML = photos.map((photo, index) => `
         <div class="photo-card">
-            <img src="${photo. url}" alt="${photo.title}">
+            <img src="${photo.url}" alt="${photo.title}">
             <div class="photo-card-title">${photo.title}</div>
             <div class="photo-card-actions">
                 <button class="btn-delete" onclick="deletePhotoFromManage('${country}', ${index})">
@@ -613,13 +635,13 @@ window.deletePhotoFromManage = async function(country, index) {
             updateCountryPhotoCounts(); // Actualizar contadores
             
             // Si está viendo ese país en el modal, actualizar
-            if (currentCountry === country && countryModal. style.display === 'block') {
+            if (currentCountry === country && countryModal.style.display === 'block') {
                 galleryData = await getGalleryDataFromFirebase();
-                if (galleryData[country].length > 0) {
-                    currentPhotoIndex = Math.min(currentPhotoIndex, galleryData[country].length - 1);
+                if (galleryData[country]. length > 0) {
+                    currentPhotoIndex = Math. min(currentPhotoIndex, galleryData[country].length - 1);
                     loadGalleryPhotos();
                 } else {
-                    countryModal.style.display = 'none';
+                    countryModal. style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }
             }
@@ -648,7 +670,7 @@ document.getElementById('exportBtn').addEventListener('click', async function() 
         a.download = `polaroid-gallery-${new Date().toISOString().split('T')[0]}.json`;
         a.click();
         
-        URL. revokeObjectURL(url);
+        URL.revokeObjectURL(url);
         showToast('✅ Galería exportada exitosamente', 'success');
     } catch (error) {
         console.error('Error al exportar:', error);
