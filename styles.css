@@ -265,28 +265,28 @@ p {
     background-position: center center !important;
     background-size: cover !important;
 }
-
 /* ============================================
    IMÁGENES VISIBLES EN CADA PAÍS
    ============================================ */
-.text-container .pic-thumbnail,
-.gallery-icon-container .pic-thumbnail {
-    width: 124px !important;
-    height:  124px !important;
+. text-container . pic-thumbnail,
+.gallery-icon-container . pic-thumbnail {
+    width: 100px ! important;
+    height: 100px !important;
     background-size: cover !important;
-    background-position: center ! important;
-    background-repeat:  no-repeat !important;
-    border: 1px solid #e0e0e0 ! important;
-    margin:  0 auto !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border:  1px solid #e0e0e0 !important;
+    margin: 0 auto !important;
     display: block !important;
 }
+
 /* SPAIN */
 .gallery-icon-container a:nth-child(1) .pic-thumbnail {
-    background-image: url("https://images.unsplash.com/photo-1495653089282-38a5286a8583?w=400") !important;
+    background-image: url("https://images.unsplash.com/photo-1495653089282-38a5286a8583? w=400") !important;
 }
 
 /* ITALY */
-.gallery-icon-container a:nth-child(2) .pic-thumbnail {
+. gallery-icon-container a:nth-child(2) .pic-thumbnail {
     background-image:  url("https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=400") !important;
 }
 
@@ -307,7 +307,7 @@ p {
 
 /* CHILE */
 .gallery-icon-container a:nth-child(6) .pic-thumbnail {
-    background-image: url("https://images.unsplash.com/photo-1489171084589-9b5031ebcf9b? w=400") !important;
+    background-image: url("https://images.unsplash.com/photo-1489171084589-9b5031ebcf9b?w=400") !important;
 }
 
 /* TURKIYE */
@@ -324,6 +324,7 @@ p {
 .gallery-icon-container a:nth-child(9) .pic-thumbnail {
     background-image: url("https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400") !important;
 }
+
 
 /* ============================================
    ROTACIONES POLAROID
