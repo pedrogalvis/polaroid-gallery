@@ -98,3 +98,43 @@ function compressImage(file, maxSizeKB = 800) {
         reader.readAsDataURL(file);
     });
 }
+// ============================================
+// ACTUALIZAR BASE DE DATOS CON NUEVOS PAÍSES
+// ============================================
+async function updateFirebaseWithNewCountries() {
+    try {
+        const currentData = await getGalleryDataFromFirebase();
+        const newCountries = ["Turkiye", "Brazil", "Singapur"];
+        
+        let needsUpdate = false;
+        newCountries.forEach(country => {
+            if (!currentData[country]) {
+                console.log(`➕ Agregando país nuevo: ${country}`);
+                currentData[country] = originalGalleryData[country];
+                needsUpdate = true;
+            }
+        });
+        
+        if (needsUpdate) {
+            console.log('🔄 Actualizando Firebase con nuevos países...');
+            await saveGalleryDataToFirebase(currentData);
+            console.log('✅ Firebase actualizado con 10 países');
+            return true;
+        } else {
+            console.log('✅ Firebase ya tiene los 10 países');
+            return false;
+        }
+    } catch (error) {
+        console.error('❌ Error al actualizar:', error);
+        return false;
+    }
+}
+
+// Ejecutar actualización al cargar la página (solo una vez)
+(async function checkAndUpdate() {
+    const updated = await updateFirebaseWithNewCountries();
+    if (updated) {
+        showToast('✅ Base de datos actualizada con nuevos países', 'success');
+        setTimeout(() => location.reload(), 2000);
+    }
+})();
