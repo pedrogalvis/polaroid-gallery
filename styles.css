@@ -12,7 +12,7 @@
     --text-dark: #333;
     --text-light: #666;
     --border-color: #ddd;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow:  0 4px 20px rgba(0, 0, 0, 0.15);
     --radius: 8px;
     --transition: all 0.3s ease;
 }
@@ -37,10 +37,10 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 0 1. 5rem;
+    padding: 0 1.5rem;
 }
 
-.flexbox-container > .left {
+.flexbox-container > . left {
     flex-basis: 30%;
     padding-right: 1rem;
 }
@@ -63,8 +63,8 @@ body {
 h2 {
     font-size: 2.5rem;
     color: #fff;
-    text-shadow: 1px 1px 5px rgba(0,0,0,. 5);
-    margin-bottom:  1.5rem;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    margin-bottom: 1.5rem;
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 600;
 }
@@ -72,7 +72,7 @@ h2 {
 p {
     font-size: 1.2rem;
     color: #fff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     margin-bottom: 1.2rem;
     font-family:  'Merriweather Sans', sans-serif;
     font-weight: 500;
@@ -80,23 +80,35 @@ p {
 }
 
 /* ============================================
-   FOTOS POLAROID
+   FOTO GRANDE - UNITED STATES (Polaroid)
    ============================================ */
 .img-container . photo-container {
-    background: #fff;
+    background: #fff ! important;
     width: 325px;
     margin-left: auto;
     margin-right: auto;
-    padding: 8px;
-    transform: rotate(-1. 05deg);
-    box-shadow: rgba(0,0,0,.5) 0px 0px 20px 0px;
+    padding: 12px 12px 40px 12px ! important;
+    transform: rotate(-1.05deg);
+    box-shadow: 
+        0 4px 15px rgba(0,0,0,0.25),
+        0 8px 30px rgba(0,0,0,0.2);
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 2px;
 }
 
 .img-container .photo-container:hover {
-    transform: scale(1.05) rotate(0deg) ! important;
+    transform:  rotate(0deg) translateY(-12px) scale(1.05) !important;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.3),
+        0 20px 50px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.img-container .photo-container:active {
+    transform: rotate(0deg) translateY(-3px) scale(1.02) !important;
+    transition: all 0.1s ease ! important;
 }
 
 .img-container .pic-thumbnail {
@@ -105,15 +117,15 @@ p {
     background: url("https://images.unsplash.com/photo-1540155945626-66eacf57fcb9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=606&q=80");
     background-size: cover;
     background-position: center 60%;
-    border:  1px solid #cecece;
+    border:  1px solid #e5e5e5;
 }
 
 .img-container span {
-    margin-top: 1. 25rem;
-    margin-bottom: . 75rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
     display: inline-block;
     font-family: 'Caveat', cursive;
-    font-size:  1.5rem;
+    font-size: 1.5rem;
     color: #555555;
     width: 100%;
     text-align: center;
@@ -123,11 +135,10 @@ p {
 /* ============================================
    GALERÍA GRID - 3 COLUMNAS RESPONSIVO
    ============================================ */
-
 .gallery-icon-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3 columnas iguales */
-    gap: 1rem;  /* Espacio entre fotos */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     justify-items: center;
     align-items: start;
     max-width: 100%;
@@ -141,110 +152,114 @@ p {
     width: 100%;
 }
 
-/* Eliminar estilos antiguos de col-1, col-2, col-3 */
-.col-1, .col-2, .col-3 {
-    display: contents;  /* Hace que se ignoren las columnas */
+/* ============================================
+   FOTOS PEQUEÑAS - POLAROID CON TAMAÑO
+   ============================================ */
+. text-container .photo-container,
+.gallery-icon-container .photo-container {
+    background: #fff ! important;
+    padding: 6px 6px 35px 6px !important;
+    width: 110px;
+    box-shadow: 
+        0 2px 8px rgba(0,0,0,0.15),
+        0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    cursor: pointer;
+    border-radius: 2px;
+    margin:  0 auto;
+}
+
+.text-container .pic-thumbnail,
+.gallery-icon-container . pic-thumbnail {
+    width:  108px;
+    height: 108px;
+    background-size: cover ! important;
+    background-position:  center !important;
+    border:  1px solid #e5e5e5 !important;
+    margin-bottom: 0.35rem;
+}
+
+.gallery-icon-container span {
+    margin-bottom: 0.35rem;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: 'Caveat', cursive;
+    color:  #555555;
+    width:  100%;
+    text-align: center;
+    font-weight: 500;
 }
 
 /* ============================================
-   IMÁGENES DE FONDO - SIMPLIFICADAS
+   IMÁGENES DE FONDO - POR PAÍS
    ============================================ */
-
-.gallery-icon-container .pic-thumbnail {
-    background-size: cover;
-    background-position: center;
-    margin-right: 0;
-}
-
-/* Usar nth-child en lugar de col-x a: nth-of-type */
-.gallery-icon-container a:nth-child(1) .pic-thumbnail {
-    background:  url("https://images.unsplash.com/photo-1495653089282-38a5286a8583?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80");
-    background-position: center 55%;
-    background-size: cover;
+.gallery-icon-container a: nth-child(1) .pic-thumbnail {
+    background: url("https://images.unsplash.com/photo-1495653089282-38a5286a8583?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80");
+    background-position: center 55% !important;
 }
 
 .gallery-icon-container a:nth-child(2) .pic-thumbnail {
-    background:  url("https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80");
-    background-position: center center;
-    background-size: cover;
+    background: url("https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80");
 }
 
 .gallery-icon-container a:nth-child(3) .pic-thumbnail {
-    background: url("https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1484&q=80");
-    background-position: 75% center;
-    background-size: cover;
+    background:  url("https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1484&q=80");
+    background-position: 75% center !important;
 }
 
 .gallery-icon-container a:nth-child(4) .pic-thumbnail {
     background: url("https://images.unsplash.com/photo-1572907564143-ee1ef5882732?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=785&q=80");
-    background-position: center center;
-    background-size:  cover;
 }
 
 .gallery-icon-container a:nth-child(5) .pic-thumbnail {
-    background: url("https://images.unsplash.com/photo-1528493366314-e317cd98dd52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80");
-    background-position: 25% center;
-    background-size: cover;
+    background:  url("https://images.unsplash.com/photo-1528493366314-e317cd98dd52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80");
+    background-position: 25% center !important;
 }
 
 .gallery-icon-container a:nth-child(6) .pic-thumbnail {
     background: url("https://images.unsplash.com/photo-1603382585507-45205571d760?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
-    background-position: center center;
-    background-size: cover;
 }
 
-/* NUEVOS PAÍSES */
 .gallery-icon-container a:nth-child(7) .pic-thumbnail {
     background: url("https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
-    background-position: center center;
-    background-size: cover;
 }
 
 .gallery-icon-container a:nth-child(8) .pic-thumbnail {
     background:  url("https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
-    background-position: center center;
-    background-size: cover;
 }
 
 .gallery-icon-container a:nth-child(9) .pic-thumbnail {
-    background:  url("https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
-    background-position: center center;
-    background-size: cover;
+    background: url("https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
 }
 
 /* ============================================
-   ROTACIONES POLAROID - SIMPLIFICADAS
+   ROTACIONES POLAROID
    ============================================ */
-
-.gallery-icon-container a:nth-child(1) .photo-container { transform: rotate(-2. 5deg); }
+.gallery-icon-container a:nth-child(1) .photo-container { transform: rotate(-2.5deg); }
 .gallery-icon-container a:nth-child(2) .photo-container { transform: rotate(1.8deg); }
 .gallery-icon-container a:nth-child(3) .photo-container { transform: rotate(-1.2deg); }
 .gallery-icon-container a:nth-child(4) .photo-container { transform: rotate(2.2deg); }
 .gallery-icon-container a:nth-child(5) .photo-container { transform: rotate(-1.8deg); }
-.gallery-icon-container a:nth-child(6) .photo-container { transform: rotate(0.8deg); }
+.gallery-icon-container a:nth-child(6) .photo-container { transform: rotate(0. 8deg); }
 .gallery-icon-container a:nth-child(7) .photo-container { transform: rotate(-2.2deg); }
 .gallery-icon-container a:nth-child(8) .photo-container { transform: rotate(1.5deg); }
 .gallery-icon-container a:nth-child(9) .photo-container { transform: rotate(-0.8deg); }
 
 /* ============================================
-   RESPONSIVE
+   EFECTOS HOVER Y ACTIVE
    ============================================ */
-
-/* TABLET - 2 columnas */
-@media only screen and (max-width: 1024px) {
-    .gallery-icon-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1. 5rem;
-    }
+.gallery-icon-container . photo-container:hover {
+    transform: rotate(0deg) translateY(-10px) scale(1.12) !important;
+    box-shadow: 
+        0 12px 30px rgba(0,0,0,0.3),
+        0 18px 45px rgba(0,0,0,0.2);
+    z-index: 100;
 }
 
-/* MÓVIL - 1 columna */
-@media only screen and (max-width: 768px) {
-    .gallery-icon-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 400px;
-    }
+.gallery-icon-container .photo-container:active {
+    transform: rotate(0deg) translateY(-2px) scale(1.05) !important;
+    transition:  all 0.1s ease ! important;
 }
 
 /* ============================================
@@ -261,7 +276,7 @@ p {
     font-size: 0.9rem;
     font-weight: 600;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition:  opacity 0.3s;
 }
 
 .photo-container:hover .click-hint {
@@ -269,16 +284,16 @@ p {
 }
 
 /* ============================================
-   BOTÓN DE ADMINISTRACIÓN
+   BOTÓN ADMIN
    ============================================ */
-.upload-button-container {
+.admin-button-container {
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 999;
 }
 
-.btn-upload {
+.btn-admin {
     background: #fff;
     color: var(--text-dark);
     border: none;
@@ -292,37 +307,13 @@ p {
     transition: var(--transition);
 }
 
-.btn-upload:hover {
+.btn-admin:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 /* ============================================
-   DELETE BUTTON
-   ============================================ */
-.delete-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: rgba(255, 59, 48, 0.9);
-    color: white;
-    border:  none;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight:  bold;
-    display: none;
-    z-index: 10;
-}
-
-.photo-container:hover .delete-btn {
-    display: block;
-}
-
-/* ============================================
-   MODAL SUBIR FOTO (Original)
+   MODAL LOGIN Y ADMIN
    ============================================ */
 .modal {
     display: none;
@@ -330,9 +321,9 @@ p {
     z-index: 1000;
     left: 0;
     top: 0;
-    width:  100%;
+    width: 100%;
     height: 100%;
-    background-color:  rgba(0,0,0,0.85);
+    background-color: rgba(0,0,0,0.85);
     overflow-y: auto;
 }
 
@@ -344,6 +335,10 @@ p {
     width: 90%;
     max-width: 500px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.admin-modal-content {
+    max-width: 400px;
 }
 
 .modal . close-modal {
@@ -359,20 +354,8 @@ p {
     color: #000;
 }
 
-#imagePreview {
-    margin-top:  15px;
-    text-align: center;
-}
-
-#imagePreview img {
-    max-width: 100%;
-    max-height: 300px;
-    border-radius:  10px;
-    box-shadow:  0 4px 15px rgba(0,0,0,0.2);
-}
-
 /* ============================================
-   MODAL PANEL DE ADMINISTRACIÓN (z-index mayor)
+   MODAL PANEL DE ADMINISTRACIÓN
    ============================================ */
 .admin-panel-modal {
     display: none;
@@ -398,7 +381,7 @@ p {
     border-radius: var(--radius);
     width: 100%;
     max-width: 100%;
-    margin:  20px auto;
+    margin: 20px auto;
     padding: 20px;
     position: relative;
     box-shadow: var(--shadow);
@@ -416,11 +399,11 @@ p {
     }
 }
 
-.admin-panel-content .close-modal {
+.admin-panel-content . close-modal {
     position: absolute;
     top: 15px;
     right: 15px;
-    font-size: 28px;
+    font-size:  28px;
     font-weight: bold;
     color: var(--text-light);
     cursor: pointer;
@@ -452,24 +435,13 @@ p {
 }
 
 /* ============================================
-   TABS NAVIGATION
+   TABS
    ============================================ */
-.admin-tabs {
+. admin-tabs {
     display: flex;
     gap: 5px;
     margin-bottom:  20px;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-}
-
-.admin-tabs::-webkit-scrollbar {
-    height: 4px;
-}
-
-.admin-tabs::-webkit-scrollbar-thumb {
-    background: var(--border-color);
-    border-radius: 4px;
 }
 
 .tab-btn {
@@ -497,34 +469,24 @@ p {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     border-color: var(--primary-color);
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
-/* ============================================
-   TAB CONTENT
-   ============================================ */
 .tab-content {
     display: none;
     animation: fadeIn 0.3s ease;
 }
 
-.tab-content.active {
+. tab-content.active {
     display: block;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ============================================
-   FORM STYLES (Ambos modales)
+   FORMULARIOS
    ============================================ */
 .form-group {
     margin-bottom: 20px;
@@ -536,10 +498,10 @@ p {
     font-weight:  600;
     color: #555;
     font-family: 'Merriweather Sans', sans-serif;
-    font-size: 0.95rem;
 }
 
 .form-group input[type="text"],
+.form-group input[type="password"],
 .form-group input[type="file"],
 .form-group select {
     width: 100%;
@@ -548,7 +510,6 @@ p {
     border-radius:  10px;
     font-size:  1rem;
     font-family: 'Merriweather Sans', sans-serif;
-    transition: var(--transition);
     box-sizing: border-box;
 }
 
@@ -556,10 +517,8 @@ p {
 .form-group select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-/* Preview de imagen en admin panel */
 #uploadPreview {
     margin-top: 15px;
     text-align: center;
@@ -570,11 +529,10 @@ p {
     height: auto;
     max-height: 250px;
     border-radius:  var(--radius);
-    box-shadow: var(--shadow);
 }
 
 /* ============================================
-   BUTTONS
+   BOTONES
    ============================================ */
 . btn-submit {
     width: 100%;
@@ -588,7 +546,6 @@ p {
     border-radius: 10px;
     cursor: pointer;
     margin-top: 10px;
-    transition: var(--transition);
 }
 
 .btn-submit:hover {
@@ -596,9 +553,9 @@ p {
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
-.btn-action {
+. btn-action {
     width: 100%;
-    background: #2196F3;
+    background:  #2196F3;
     color: white;
     border: none;
     padding: 14px 20px;
@@ -606,42 +563,22 @@ p {
     font-weight: 600;
     border-radius: var(--radius);
     cursor: pointer;
-    transition: var(--transition);
     margin-top: 10px;
     font-family: 'Merriweather Sans', sans-serif;
-}
-
-.btn-action:hover {
-    background: #1976D2;
-    transform:  translateY(-2px);
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
 }
 
 .btn-danger {
     width: 100%;
     background:  var(--danger-color);
     color: white;
-    border:  none;
+    border: none;
     padding: 14px 20px;
-    font-size: 1rem;
+    font-size:  1rem;
     font-weight: 600;
     border-radius: var(--radius);
     cursor: pointer;
-    transition: var(--transition);
     margin-top: 10px;
     font-family: 'Merriweather Sans', sans-serif;
-}
-
-.btn-danger:hover {
-    background: #d32f2f;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
-}
-
-.btn-submit: active,
-.btn-action:active,
-.btn-danger:active {
-    transform: translateY(0);
 }
 
 /* ============================================
@@ -649,12 +586,11 @@ p {
    ============================================ */
 .manage-photos-grid {
     display: grid;
-    grid-template-columns:  1fr;
+    grid-template-columns: 1fr;
     gap: 15px;
-    margin-top: 20px;
+    margin-top:  20px;
     max-height: 400px;
     overflow-y: auto;
-    padding: 10px;
 }
 
 .photo-item {
@@ -665,12 +601,6 @@ p {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transition: var(--transition);
-}
-
-.photo-item:hover {
-    box-shadow: var(--shadow);
-    border-color: var(--primary-color);
 }
 
 .photo-item img {
@@ -680,14 +610,9 @@ p {
     border-radius:  var(--radius);
 }
 
-.photo-item-info {
-    flex: 1;
-}
-
 .photo-item-info h4 {
     margin: 0 0 10px 0;
     color: var(--text-dark);
-    font-size: 1rem;
 }
 
 .photo-item-actions {
@@ -701,22 +626,12 @@ p {
     border: none;
     border-radius: var(--radius);
     cursor: pointer;
-    font-size: 0.9rem;
     font-weight: 600;
-    transition: var(--transition);
 }
 
 .photo-item-actions . btn-delete {
     background: var(--danger-color);
     color: white;
-    width: auto;
-    height: auto;
-    border-radius: var(--radius);
-    display: block;
-}
-
-.photo-item-actions .btn-delete:hover {
-    background: #d32f2f;
 }
 
 /* ============================================
@@ -733,24 +648,12 @@ p {
 .export-section h3 {
     margin:  0 0 10px 0;
     color:  var(--text-dark);
-    font-size: 1.1rem;
 }
 
 .export-section p {
     margin: 0 0 15px 0;
     color:  var(--text-light);
-    font-size: 0.9rem;
-    line-height: 1.5;
     text-shadow: none;
-}
-
-.export-section input[type="file"] {
-    width: 100%;
-    padding:  10px;
-    margin-bottom: 10px;
-    border: 2px dashed var(--border-color);
-    border-radius: var(--radius);
-    background: white;
 }
 
 /* ============================================
@@ -786,13 +689,8 @@ p {
 .close-country-modal {
     color: white;
     font-size: 40px;
-    font-weight:  bold;
+    font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.close-country-modal:hover {
-    transform:  scale(1.2);
 }
 
 .modal-gallery-container {
@@ -807,16 +705,13 @@ p {
 .main-photo-display {
     max-width: 800px;
     width: 100%;
-    position: relative;
 }
 
 .main-photo-display img {
     width: 100%;
-    height: auto;
     max-height: 70vh;
-    object-fit: contain;
+    object-fit:  contain;
     border-radius: 10px;
-    box-shadow:  0 10px 50px rgba(255, 255, 255, 0.2);
 }
 
 .photo-info {
@@ -824,7 +719,6 @@ p {
     margin-top: 20px;
     color: white;
     font-family: 'Merriweather Sans', sans-serif;
-    font-size: 1.1rem;
 }
 
 .nav-btn {
@@ -836,36 +730,18 @@ p {
     height: 60px;
     border-radius: 50%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
     color: #333;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.nav-btn:hover {
-    background: white;
-    transform: scale(1.1);
-}
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
 
-.prev-btn {
-    left: 20px;
-}
-
-.next-btn {
-    right: 20px;
-}
-
-. thumbnails-container {
+.thumbnails-container {
     display: flex;
     justify-content: center;
     gap: 15px;
     padding: 20px;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .thumbnail {
@@ -875,85 +751,33 @@ p {
     border-radius: 8px;
     cursor: pointer;
     border: 3px solid transparent;
-    transition: all 0.3s;
 }
 
 .thumbnail:hover {
-    border-color: var(--primary-color);
-    transform: scale(1.1);
+    border-color:  var(--primary-color);
 }
 
 .thumbnail.active {
     border-color: var(--secondary-color);
-    box-shadow: 0 0 20px rgba(118, 75, 162, 0.8);
 }
 
 /* ============================================
-   LOADING STATE
+   RESPONSIVE
    ============================================ */
-.loading {
-    pointer-events: none;
-    opacity: 0.6;
-    position: relative;
+@media (max-width: 1024px) {
+    .gallery-icon-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1. 5rem;
+    }
 }
 
-.loading::after {
-    content: "⏳ Cargando...";
-    position: absolute;
-    top:  50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 10px 20px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    font-weight: 600;
-}
-
-/* ============================================
-   SCROLLBAR PERSONALIZADO
-   ============================================ */
-. manage-photos-grid::-webkit-scrollbar {
-    width: 8px;
-}
-
-.manage-photos-grid::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.manage-photos-grid::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 10px;
-}
-
-.manage-photos-grid::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary-color);
-}
-
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
-.text-center {
-    text-align: center;
-}
-
-.mb-10 {
-    margin-bottom: 10px;
-}
-
-.mb-20 {
-    margin-bottom: 20px;
-}
-
-.hidden {
-    display: none ! important;
-}
-
-/* ============================================
-   RESPONSIVE - MOBILE
-   ============================================ */
-@media only screen and (max-width: 599px) {
+@media (max-width:  768px) {
+    .gallery-icon-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 400px;
+    }
+    
     .flexbox-container {
         flex-direction: column;
     }
@@ -966,627 +790,36 @@ p {
     .flexbox-container > .right {
         padding-left: 0;
     }
-    
-    .click-hint {
-        font-size: 0.8rem;
-    }
 }
 
-/* ============================================
-   RESPONSIVE - TABLET (600px - 899px)
-   ============================================ */
 @media (min-width: 600px) {
-    .admin-panel-modal {
-        padding: 20px;
-    }
-
     .admin-panel-content {
         padding: 30px;
         margin:  40px auto;
     }
-
-    .admin-panel-content h2 {
-        font-size: 1.8rem;
-    }
-
-    . admin-tabs {
-        gap: 10px;
-    }
-
-    . tab-btn {
-        font-size: 0.95rem;
-        padding: 14px 20px;
-    }
-
+    
     .manage-photos-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .photo-item {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .photo-item img {
-        width: 120px;
-        height: 120px;
-        flex-shrink: 0;
-    }
-
-    #uploadPreview img {
-        max-height: 300px;
     }
 }
 
-@media only screen and (max-width: 768px) {
-    .modal-header h2 {
-        font-size: 1.5rem;
-    }
-    
-    .nav-btn {
-        width: 45px;
-        height: 45px;
-        font-size:  2rem;
-    }
-    
-    .prev-btn {
-        left: 10px;
-    }
-    
-    .next-btn {
-        right: 10px;
-    }
-    
-    .thumbnail {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@media only screen and (max-width: 899px) {
-    .flexbox-container {
-        flex-direction: column;
-    }
-    
-    .flexbox-container > .left {
-        margin: 0 auto 3rem;
-        padding-right: 0;
-    }
-    
-    .flexbox-container > .right {
-        padding-left: 0;
-    }
-}
-
-/* ============================================
-   RESPONSIVE - DESKTOP (900px+)
-   ============================================ */
-@media (min-width:  900px) {
+@media (min-width: 900px) {
     .admin-panel-content {
         max-width: 900px;
         padding: 40px;
     }
-
-    .admin-panel-content h2 {
-        font-size: 2rem;
-    }
-
-    .admin-tabs {
-        gap: 15px;
-    }
-
-    . tab-btn {
-        font-size: 1rem;
-        padding: 15px 25px;
-        min-width: 150px;
-    }
-
-    . manage-photos-grid {
+    
+    .manage-photos-grid {
         grid-template-columns: repeat(3, 1fr);
-        max-height: 500px;
-    }
-
-    . btn-submit,
-    .btn-action,
-    .btn-danger {
-        width: auto;
-        min-width: 200px;
-        padding: 15px 30px;
-    }
-
-    . export-section {
-        padding: 25px;
-    }
-
-    .photo-item-actions {
-        flex-direction: row;
     }
 }
 
-/* ============================================
-   RESPONSIVE - LARGE DESKTOP (1200px+)
-   ============================================ */
 @media (min-width: 1200px) {
     .admin-panel-content {
         max-width: 1000px;
     }
-
+    
     .manage-photos-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-
-   /* ============================================
-   EFECTO POLAROID PARA TODAS LAS FOTOS
-   ============================================ */
-
-/* Aplicar a TODAS las fotos (grande y pequeñas) */
-.img-container . photo-container,
-.text-container .photo-container,
-.gallery-icon-container .photo-container {
-    background:  #fff ! important;
-    padding: 8px ! important;
-    box-shadow: 
-        0 3px 10px rgba(0,0,0,0.2),
-        0 6px 20px rgba(0,0,0,0.15);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    cursor: pointer;
-    border-radius: 2px;
-}
-
-/* Borde interno sutil */
-.img-container .pic-thumbnail,
-.text-container .pic-thumbnail,
-.gallery-icon-container .pic-thumbnail {
-    border: 1px solid #e5e5e5 !important;
-}
-
-/* ============================================
-   ROTACIONES INICIALES (reposo)
-   ============================================ */
-
-/* Foto grande United States */
-.img-container . photo-container {
-    transform: rotate(-1. 05deg);
-    padding: 12px 12px 40px 12px ! important;
-}
-
-/* Fotos pequeñas - rotaciones aleatorias */
-.gallery-icon-container .col-1 a: nth-of-type(1) .photo-container {
-    transform: rotate(-2.5deg);
-}
-
-.gallery-icon-container .col-1 a:nth-of-type(2) .photo-container {
-    transform: rotate(1.8deg);
-}
-
-.gallery-icon-container .col-1 a:nth-of-type(3) .photo-container {
-    transform: rotate(-1.2deg);
-}
-
-.gallery-icon-container .col-2 a:nth-of-type(1) .photo-container {
-    transform: rotate(2.2deg);
-}
-
-.gallery-icon-container .col-2 a:nth-of-type(2) .photo-container {
-    transform: rotate(-1.8deg);
-}
-
-.gallery-icon-container .col-2 a:nth-of-type(3) .photo-container {
-    transform: rotate(0.8deg);
-}
-
-/* ============================================
-   EFECTO HOVER - Levantamiento y Aumento
-   ============================================ */
-
-/* Foto grande - hover */
-.img-container . photo-container:hover {
-    transform: rotate(0deg) translateY(-12px) scale(1.05) !important;
-    box-shadow:   
-        0 15px 35px rgba(0,0,0,0.3),
-        0 20px 50px rgba(0,0,0,0.2);
-    z-index: 100;
-}
-
-/* Fotos pequeñas - hover */
-. gallery-icon-container .photo-container:hover {
-    transform:  rotate(0deg) translateY(-10px) scale(1.12) !important;
-    box-shadow:  
-        0 12px 30px rgba(0,0,0,0.3),
-        0 18px 45px rgba(0,0,0,0.2);
-    z-index: 100;
-}
-
-/* ============================================
-   EFECTO ACTIVE - Hundimiento al hacer CLICK
-   ============================================ */
-
-/* Foto grande - click */
-.img-container .photo-container: active {
-    transform: rotate(0deg) translateY(-3px) scale(1.02) !important;
-    box-shadow:  
-        0 5px 15px rgba(0,0,0,0.25),
-        0 8px 25px rgba(0,0,0,0.15);
-    transition: all 0.1s ease ! important;
-}
-
-/* Fotos pequeñas - click */
-.gallery-icon-container .photo-container:active {
-    transform: rotate(0deg) translateY(-2px) scale(1.05) !important;
-    box-shadow:  
-        0 4px 12px rgba(0,0,0,0.25),
-        0 6px 20px rgba(0,0,0,0.15);
-    transition: all 0.1s ease !important;
-}
-
-/* ============================================
-   EFECTO DE BRILLO AL HOVER
-   ============================================ */
-
-. img-container .photo-container:: after,
-.gallery-icon-container .photo-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right:  0;
-    bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.5) 0%,
-        rgba(255,255,255,0) 60%
-    );
-    opacity: 0;
-    transition:  opacity 0.3s ease;
-    pointer-events: none;
-    border-radius: 2px;
-}
-
-.img-container .photo-container:hover::after,
-.gallery-icon-container .photo-container:hover::after {
-    opacity: 1;
-}
-
-/* ============================================
-   ANIMACIÓN DE ENTRADA (flotando)
-   ============================================ */
-
-.photo-container {
-    animation: gentleFloat 0.8s ease-out backwards;
-}
-
-@keyframes gentleFloat {
-    from {
-        opacity: 0;
-        transform:  translateY(30px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* ============================================
-   TEXTO (nombre del país) - Mejorado
-   ============================================ */
-
-.img-container span,
-.gallery-icon-container span {
-    font-family: 'Caveat', cursive;
-    color: #555;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-}
-
-.photo-container:hover span {
-    color: #333;
-    transform: scale(1.05);
-}
-
-/* ============================================
-   CLICK HINT - Mejorado
-   ============================================ */
-
-.click-hint {
-    position: absolute;
-    bottom: 45px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: #667eea;
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    opacity: 0;
-    transition:  opacity 0.3s ease, transform 0.3s ease;
-    transform: translateY(10px);
-    z-index: 3;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.photo-container:hover .click-hint {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ============================================
-   RESPONSIVE - Ajustes para móvil
-   ============================================ */
-
-@media only screen and (max-width: 768px) {
-    /* En móvil, reducir efectos para mejor rendimiento */
-    .img-container .photo-container:hover {
-        transform: rotate(0deg) translateY(-8px) scale(1.03) !important;
-    }
-    
-    .gallery-icon-container .photo-container:hover {
-        transform: rotate(0deg) translateY(-6px) scale(1.08) !important;
-    }
-    
-    .click-hint {
-        font-size: 0.75rem;
-        bottom: 35px;
-    }
-}
-
-/* ============================================
-   ESTADOS DE CARGA - Pulse suave
-   ============================================ */
-
-@keyframes softPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.02);
-    }
-}
-
-/* Aplicar pulse muy sutil en reposo (opcional) */
-.photo-container {
-    animation: softPulse 4s ease-in-out infinite;
-}
-
-. photo-container:hover {
-    animation: none;
-}
-
-/* ============================================
-   MEJORA DE SOMBRAS SEGÚN EL CONTEXTO
-   ============================================ */
-
-/* Sombra más pronunciada para la foto grande */
-.img-container .photo-container {
-    box-shadow: 
-        0 4px 15px rgba(0,0,0,0.25),
-        0 8px 30px rgba(0,0,0,0.2);
-}
-
-/* Sombras más suaves para fotos pequeñas */
-.gallery-icon-container .photo-container {
-    box-shadow: 
-        0 2px 8px rgba(0,0,0,0.15),
-        0 4px 15px rgba(0,0,0,0.1);
-}
-/* ============================================
-   POLAROID MEJORADO PARA GALERÍA DE PAÍSES
-   ============================================ */
-
-/* Aplicar estilo polaroid a todas las fotos pequeñas */
-.gallery-icon-container .photo-container {
-    background: #fff;
-    padding: 6px;
-    box-shadow: 
-        0 2px 8px rgba(0,0,0,0.15),
-        0 4px 20px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    cursor: pointer;
-}
-
-/* Rotaciones aleatorias para cada foto (efecto polaroid auténtico) */
-.gallery-icon-container .col-1 a: nth-of-type(1) .photo-container {
-    transform: rotate(-2deg);
-}
-
-.gallery-icon-container .col-1 a:nth-of-type(2) .photo-container {
-    transform: rotate(1. 5deg);
-}
-
-.gallery-icon-container .col-1 a:nth-of-type(3) .photo-container {
-    transform: rotate(-1deg);
-}
-
-.gallery-icon-container .col-2 a:nth-of-type(1) .photo-container {
-    transform: rotate(2deg);
-}
-
-.gallery-icon-container .col-2 a:nth-of-type(2) .photo-container {
-    transform: rotate(-1.5deg);
-}
-
-.gallery-icon-container .col-2 a:nth-of-type(3) .photo-container {
-    transform: rotate(0.5deg);
-}
-
-/* Efecto HOVER - Levanta y endereza la foto */
-.gallery-icon-container .photo-container:hover {
-    transform: rotate(0deg) translateY(-8px) scale(1.08) ! important;
-    box-shadow:  
-        0 8px 25px rgba(0,0,0,0.25),
-        0 12px 40px rgba(0,0,0,0.15);
-    z-index: 10;
-}
-
-/* Efecto ACTIVE (cuando se hace clic) */
-.gallery-icon-container .photo-container:active {
-    transform: rotate(0deg) translateY(-4px) scale(1.05) !important;
-    transition: all 0.15s ease;
-}
-
-/* Animación suave al aparecer */
-.gallery-icon-container .photo-container {
-    animation: floatIn 0.6s ease-out backwards;
-}
-
-/* Retraso escalonado para cada foto */
-. gallery-icon-container .col-1 a:nth-of-type(1) .photo-container {
-    animation-delay:  0.1s;
-}
-
-.gallery-icon-container .col-1 a:nth-of-type(2) .photo-container {
-    animation-delay: 0.2s;
-}
-
-.gallery-icon-container .col-1 a:nth-of-type(3) .photo-container {
-    animation-delay: 0.3s;
-}
-
-. gallery-icon-container .col-2 a:nth-of-type(1) .photo-container {
-    animation-delay: 0.4s;
-}
-
-.gallery-icon-container .col-2 a:nth-of-type(2) .photo-container {
-    animation-delay:  0.5s;
-}
-
-.gallery-icon-container . col-2 a:nth-of-type(3) .photo-container {
-    animation-delay: 0.6s;
-}
-
-@keyframes floatIn {
-    from {
-        opacity: 0;
-        transform:  translateY(20px) rotate(0deg);
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Borde interno para mayor efecto polaroid */
-.gallery-icon-container .pic-thumbnail {
-    border: 1px solid #e0e0e0;
-}
-
-/* Efecto de brillo sutil al hacer hover */
-.gallery-icon-container .photo-container:: before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right:  0;
-    bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.4) 0%,
-        rgba(255,255,255,0) 50%
-    );
-    opacity: 0;
-    transition:  opacity 0.3s ease;
-    pointer-events: none;
-    border-radius: 2px;
-}
-
-.gallery-icon-container .photo-container:hover::before {
-    opacity:  1;
-}
-
-/* Efecto de sombra interior en el texto */
-.gallery-icon-container span {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    transition: color 0.3s ease;
-}
-
-.gallery-icon-container . photo-container:hover + span,
-.gallery-icon-container a:hover span {
-    color: #333;
-}
-/* ============================================
-   NUEVOS PAÍSES - COLUMNA 3
-   ============================================ */
-
-/* Estilos base para col-3 */
-.gallery-icon-container .col-3 {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-/* Imágenes de fondo para los NUEVOS países */
-
-/* Turkiye */
-.gallery-icon-container .col-3 a: nth-of-type(1) .pic-thumbnail {
-    background:  url("https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
-    background-position: center center;
-    background-size: cover;
-}
-
-/* Brazil */
-.gallery-icon-container .col-3 a:nth-of-type(2) .pic-thumbnail {
-    background: url("https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
-    background-position: center center;
-    background-size: cover;
-}
-
-/* Singapur */
-.gallery-icon-container .col-3 a:nth-of-type(3) .pic-thumbnail {
-    background: url("https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
-    background-position: center center;
-    background-size: cover;
-}
-
-/* ============================================
-   ROTACIONES POLAROID PARA COLUMNA 3
-   ============================================ */
-
-. gallery-icon-container .col-3 a:nth-of-type(1) .photo-container {
-    transform: rotate(-2.2deg);
-}
-
-.gallery-icon-container . col-3 a:nth-of-type(2) .photo-container {
-    transform: rotate(1.5deg);
-}
-
-.gallery-icon-container .col-3 a:nth-of-type(3) .photo-container {
-    transform: rotate(-0.8deg);
-}
-
-/* Efecto hover ya está cubierto por los estilos globales anteriores */
-
-/* ============================================
-   RESPONSIVE - Ajustar para 3 columnas
-   ============================================ */
-
-@media only screen and (max-width: 1024px) {
-    /* En tablets, mostrar 2 columnas */
-    .gallery-icon-container {
-        flex-wrap: wrap;
-    }
-    
-    .gallery-icon-container .col-1,
-    .gallery-icon-container .col-2,
-    .gallery-icon-container .col-3 {
-        flex: 1 1 45%;
-        min-width: 200px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    /* En móvil, todas las columnas ocupan 100% */
-    . gallery-icon-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .gallery-icon-container .col-1,
-    .gallery-icon-container . col-2,
-    .gallery-icon-container .col-3 {
-        width: 100%;
-        max-width: 400px;
-    }
-}
 }
