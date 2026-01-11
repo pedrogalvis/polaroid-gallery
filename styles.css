@@ -1467,4 +1467,88 @@ p {
 .gallery-icon-container a:hover span {
     color: #333;
 }
+/* ============================================
+   NUEVOS PAÍSES - COLUMNA 3
+   ============================================ */
+
+/* Estilos base para col-3 */
+.gallery-icon-container .col-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Imágenes de fondo para los NUEVOS países */
+
+/* Turkiye */
+.gallery-icon-container .col-3 a: nth-of-type(1) .pic-thumbnail {
+    background:  url("https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Brazil */
+.gallery-icon-container .col-3 a:nth-of-type(2) .pic-thumbnail {
+    background: url("https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Singapur */
+.gallery-icon-container .col-3 a:nth-of-type(3) .pic-thumbnail {
+    background: url("https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
+    background-position: center center;
+    background-size: cover;
+}
+
+/* ============================================
+   ROTACIONES POLAROID PARA COLUMNA 3
+   ============================================ */
+
+. gallery-icon-container .col-3 a:nth-of-type(1) .photo-container {
+    transform: rotate(-2.2deg);
+}
+
+.gallery-icon-container . col-3 a:nth-of-type(2) .photo-container {
+    transform: rotate(1.5deg);
+}
+
+.gallery-icon-container .col-3 a:nth-of-type(3) .photo-container {
+    transform: rotate(-0.8deg);
+}
+
+/* Efecto hover ya está cubierto por los estilos globales anteriores */
+
+/* ============================================
+   RESPONSIVE - Ajustar para 3 columnas
+   ============================================ */
+
+@media only screen and (max-width: 1024px) {
+    /* En tablets, mostrar 2 columnas */
+    .gallery-icon-container {
+        flex-wrap: wrap;
+    }
+    
+    .gallery-icon-container .col-1,
+    .gallery-icon-container .col-2,
+    .gallery-icon-container .col-3 {
+        flex: 1 1 45%;
+        min-width: 200px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* En móvil, todas las columnas ocupan 100% */
+    . gallery-icon-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .gallery-icon-container .col-1,
+    .gallery-icon-container . col-2,
+    .gallery-icon-container .col-3 {
+        width: 100%;
+        max-width: 400px;
+    }
+}
 }
