@@ -268,7 +268,7 @@ p {
 /* ============================================
    IMÁGENES VISIBLES EN CADA PAÍS
    ============================================ */
-. text-container . pic-thumbnail,
+.text-container . pic-thumbnail,
 .gallery-icon-container .pic-thumbnail {
     width: 124px ! important;
     height: 124px !important;
@@ -327,10 +327,8 @@ p {
     background-image: url("https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400") !important;
 }
 
-/* ============================================
-   ROTACIONES POLAROID
-   ============================================ */
-.gallery-icon-container a:nth-child(1) .photo-container {
+/* ROTACIONES POLAROID */
+. gallery-icon-container a:nth-child(1) .photo-container {
     transform: rotate(-2.5deg);
     animation-delay: 0.1s;
 }
@@ -351,7 +349,7 @@ p {
 }
 
 .gallery-icon-container a:nth-child(5) .photo-container {
-    transform:  rotate(-1.8deg);
+    transform: rotate(-1.8deg);
     animation-delay: 0.5s;
 }
 
@@ -375,10 +373,8 @@ p {
     animation-delay: 0.9s;
 }
 
-/* ============================================
-   EFECTO HOVER - MOVIMIENTO POLAROID
-   ============================================ */
-.gallery-icon-container .photo-container:hover {
+/* EFECTO HOVER */
+.gallery-icon-container . photo-container:hover {
     transform: rotate(0deg) translateY(-15px) scale(1.15) !important;
     box-shadow: 0 15px 40px rgba(0,0,0,0.35), 0 20px 60px rgba(0,0,0,0.25);
     z-index: 100;
@@ -391,30 +387,28 @@ p {
     transition: all 0.15s ease !important;
 }
 
-/* Efecto de brillo al hover */
-.gallery-icon-container . photo-container::before {
-    content: '';
+. gallery-icon-container .photo-container::before {
+    content:  '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom:  0;
     background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 60%);
     opacity: 0;
-    transition:  opacity 0.3s ease;
+    transition: opacity 0.3s ease;
     pointer-events: none;
     border-radius: 2px;
-    z-index:  1;
+    z-index: 1;
 }
 
 .gallery-icon-container .photo-container:hover::before {
     opacity: 1;
 }
 
-/* Texto se agranda al hover */
-.gallery-icon-container . photo-container:hover span {
+. gallery-icon-container .photo-container:hover span {
     color: #222;
-    transform: scale(1.08);
+    transform:  scale(1.08);
     text-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
