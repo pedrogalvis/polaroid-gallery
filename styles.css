@@ -80,93 +80,75 @@ p {
 }
 
 /* ============================================
-   FOTOS POLAROID - FOTO GRANDE
+   FOTOS POLAROID - FOTO GRANDE (MEJORADO)
    ============================================ */
 .img-container . photo-container {
-    background: #fff ! important;
-    width: 325px;
+    background: #ffffff !important;
+    width: 340px;
     margin-left: auto;
     margin-right: auto;
-    padding: 12px 12px 40px 12px ! important;
+    padding: 15px 15px 50px 15px ! important;  /* Marco blanco más visible */
     transform: rotate(-1. 05deg);
     box-shadow: 
-        0 4px 15px rgba(0,0,0,0.25),
-        0 8px 30px rgba(0,0,0,0.2);
+        0 5px 20px rgba(0,0,0,0.3),
+        0 10px 40px rgba(0,0,0,0.2),
+        inset 0 0 0 1px rgba(0,0,0,0.05);
     position: relative;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 2px;
+    border-radius: 3px;
+    animation: gentleFloat 1s ease-out backwards;
 }
 
 .img-container .photo-container:hover {
-    transform: rotate(0deg) translateY(-12px) scale(1.05) !important;
+    transform: rotate(0deg) translateY(-15px) scale(1.05) !important;
     box-shadow: 
-        0 15px 35px rgba(0,0,0,0.3),
-        0 20px 50px rgba(0,0,0,0.2);
+        0 20px 50px rgba(0,0,0,0.35),
+        0 25px 70px rgba(0,0,0,0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.8);
     z-index: 100;
 }
 
 .img-container .photo-container:active {
-    transform: rotate(0deg) translateY(-3px) scale(1.02) !important;
+    transform:  rotate(0deg) translateY(-5px) scale(1.02) !important;
     box-shadow: 
-        0 5px 15px rgba(0,0,0,0.25),
-        0 8px 25px rgba(0,0,0,0.15);
-    transition: all 0.1s ease ! important;
+        0 8px 20px rgba(0,0,0,0.3),
+        0 12px 35px rgba(0,0,0,0.2);
+    transition: all 0.12s ease ! important;
 }
 
-.img-container .pic-thumbnail {
-    width: 324px;
-    height: 324px;
-    background: url("https://images.unsplash.com/photo-1540155945626-66eacf57fcb9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=606&q=80");
+. img-container .pic-thumbnail {
+    width: 310px;
+    height: 310px;
+    background:  url("https://images.unsplash.com/photo-1540155945626-66eacf57fcb9? ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=606&q=80");
     background-size: cover;
     background-position: center 60%;
-    border:  1px solid #e5e5e5;
+    border: 1px solid #e0e0e0;
 }
 
-.img-container span {
-    margin-top: 1.25rem;
-    margin-bottom: . 75rem;
-    display: inline-block;
-    font-family: 'Caveat', cursive;
-    font-size:  1.5rem;
-    color: #555555;
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-}
-
-.img-container . photo-container:hover span {
-    color: #333;
-    transform: scale(1.05);
-}
-
-/* Efecto de brillo en foto grande */
-.img-container . photo-container:: after {
+/* Brillo en foto grande */
+.img-container .photo-container::after {
     content: '';
     position: absolute;
-    top:  0;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
+    background:  linear-gradient(
         135deg,
-        rgba(255,255,255,0.5) 0%,
+        rgba(255,255,255,0.6) 0%,
         rgba(255,255,255,0) 60%
     );
     opacity: 0;
     transition:  opacity 0.3s ease;
     pointer-events: none;
-    border-radius: 2px;
+    border-radius: 3px;
+    z-index:  1;
 }
 
 .img-container .photo-container:hover::after {
     opacity: 1;
 }
-
 /* ============================================
    GALERÍA GRID - 3 COLUMNAS RESPONSIVO
    ============================================ */
@@ -187,46 +169,51 @@ p {
 }
 
 /* ============================================
-   FOTOS POLAROID - FOTOS PEQUEÑAS
+   FOTOS POLAROID - FOTOS PEQUEÑAS (MEJORADO)
    ============================================ */
 .text-container . photo-container,
 .gallery-icon-container .photo-container {
-    background: #fff ! important;
-    padding: 6px 6px 35px 6px !important;
-    width: 110px;
+    background: #ffffff ! important;  /* Fondo blanco */
+    padding: 8px 8px 40px 8px !important;  /* Marco blanco visible */
+    width: 130px !important;  /* Más ancho */
     box-shadow: 
-        0 2px 8px rgba(0,0,0,0.15),
-        0 4px 20px rgba(0,0,0,0.1);
+        0 3px 10px rgba(0,0,0,0.2),
+        0 6px 20px rgba(0,0,0,0.15),
+        inset 0 0 0 1px rgba(0,0,0,0.05);  /* Borde sutil */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     cursor: pointer;
-    border-radius: 2px;
-    animation: floatIn 0.6s ease-out backwards;
+    border-radius: 3px;
+    animation: floatIn 0.8s ease-out backwards;
+    margin: 0 auto;
 }
 
 .text-container .pic-thumbnail,
 .gallery-icon-container .pic-thumbnail {
-    width: 108px;
-    height: 108px;
-    background-size: cover ! important;
-    background-position:  center ! important;
-    border: 1px solid #e5e5e5 !important;
-    margin-bottom: . 35rem;
+    width: 114px !important;  /* Ajustado al nuevo tamaño */
+    height:  114px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border:  1px solid #e0e0e0 !important;  /* Borde de la foto */
+    margin-bottom: 0;
+    display: block;
 }
 
 .gallery-icon-container span {
-    margin-bottom: .35rem;
-    display: inline-block;
-    font-size: 1.1rem;
+    margin-top: 8px;
+    margin-bottom: 0;
+    display: block;
+    font-size: 1.15rem;
     font-family: 'Caveat', cursive;
     color: #555555;
     width: 100%;
     text-align: center;
     font-weight: 500;
-    text-shadow:  0 1px 2px rgba(0,0,0,0.05);
-    transition: color 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
-
 /* ============================================
    IMÁGENES DE FONDO - SIMPLIFICADAS
    ============================================ */
@@ -272,61 +259,93 @@ p {
 /* ============================================
    ROTACIONES POLAROID - SIMPLIFICADAS
    ============================================ */
-.gallery-icon-container a:nth-child(1) .photo-container { transform: rotate(-2. 5deg); }
-.gallery-icon-container a:nth-child(2) .photo-container { transform: rotate(1.8deg); }
-.gallery-icon-container a:nth-child(3) .photo-container { transform: rotate(-1.2deg); }
-.gallery-icon-container a:nth-child(4) .photo-container { transform: rotate(2.2deg); }
-.gallery-icon-container a:nth-child(5) .photo-container { transform: rotate(-1.8deg); }
-.gallery-icon-container a:nth-child(6) .photo-container { transform: rotate(0. 8deg); }
-.gallery-icon-container a:nth-child(7) .photo-container { transform: rotate(-2.2deg); }
-.gallery-icon-container a:nth-child(8) .photo-container { transform: rotate(1.5deg); }
-.gallery-icon-container a:nth-child(9) .photo-container { transform: rotate(-0.8deg); }
+. gallery-icon-container a: nth-child(1) .photo-container { transform: rotate(-3deg); animation-delay: 0.1s; }
+.gallery-icon-container a:nth-child(2) .photo-container { transform: rotate(2. 5deg); animation-delay: 0.2s; }
+. gallery-icon-container a:nth-child(3) .photo-container { transform: rotate(-1.5deg); animation-delay: 0.3s; }
+.gallery-icon-container a:nth-child(4) .photo-container { transform: rotate(2. 8deg); animation-delay: 0.4s; }
+.gallery-icon-container a:nth-child(5) .photo-container { transform: rotate(-2.2deg); animation-delay: 0.5s; }
+.gallery-icon-container a:nth-child(6) .photo-container { transform: rotate(1.2deg); animation-delay: 0.6s; }
+.gallery-icon-container a:nth-child(7) .photo-container { transform: rotate(-2.8deg); animation-delay: 0.7s; }
+.gallery-icon-container a:nth-child(8) .photo-container { transform: rotate(2deg); animation-delay: 0.8s; }
+.gallery-icon-container a:nth-child(9) .photo-container { transform: rotate(-1.8deg); animation-delay: 0.9s; }
 
 /* ============================================
-   EFECTO HOVER - FOTOS PEQUEÑAS
+   PULSE SUAVE EN REPOSO (opcional)
    ============================================ */
-.gallery-icon-container . photo-container:hover {
-    transform: rotate(0deg) translateY(-10px) scale(1.12) !important;
+.gallery-icon-container . photo-container {
+    animation: floatIn 0.8s ease-out backwards, gentlePulse 5s ease-in-out 1s infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        box-shadow: 
+            0 3px 10px rgba(0,0,0,0.2),
+            0 6px 20px rgba(0,0,0,0.15);
+    }
+    50% {
+        box-shadow: 
+            0 4px 12px rgba(0,0,0,0.22),
+            0 7px 22px rgba(0,0,0,0.17);
+        transform: translateY(-2px);
+    }
+}
+
+/* Detener pulse en hover */
+.gallery-icon-container .photo-container:hover {
+    animation: none !important;
+}
+
+/* ============================================
+   EFECTO HOVER - FOTOS PEQUEÑAS (MEJORADO)
+   ============================================ */
+.gallery-icon-container .photo-container:hover {
+    transform: rotate(0deg) translateY(-12px) scale(1.15) !important;
     box-shadow: 
-        0 12px 30px rgba(0,0,0,0.3),
-        0 18px 45px rgba(0,0,0,0.2);
+        0 15px 40px rgba(0,0,0,0.35),
+        0 20px 60px rgba(0,0,0,0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.8);
     z-index: 100;
+    animation: none ! important;  /* Detener pulse en hover */
 }
 
-.gallery-icon-container . photo-container:active {
-    transform: rotate(0deg) translateY(-2px) scale(1.05) !important;
+/* EFECTO ACTIVE - Hundimiento al hacer CLICK */
+.gallery-icon-container .photo-container:active {
+    transform: rotate(0deg) translateY(-4px) scale(1.08) !important;
     box-shadow: 
-        0 4px 12px rgba(0,0,0,0.25),
-        0 6px 20px rgba(0,0,0,0.15);
-    transition: all 0.1s ease !important;
+        0 6px 15px rgba(0,0,0,0.3),
+        0 8px 25px rgba(0,0,0,0.2);
+    transition: all 0.1s ease ! important;
 }
 
-/* Efecto de brillo en fotos pequeñas */
-.gallery-icon-container .photo-container::before {
+/* Efecto de brillo al hover */
+.gallery-icon-container .photo-container:: after {
     content: '';
     position: absolute;
-    top:  0;
+    top: 0;
     left: 0;
-    right: 0;
+    right:  0;
     bottom: 0;
     background: linear-gradient(
         135deg,
-        rgba(255,255,255,0.4) 0%,
-        rgba(255,255,255,0) 50%
+        rgba(255,255,255,0.6) 0%,
+        rgba(255,255,255,0) 60%
     );
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
-    border-radius: 2px;
+    border-radius: 3px;
+    z-index: 1;
 }
 
-.gallery-icon-container .photo-container:hover::before {
+.gallery-icon-container .photo-container:hover::after {
     opacity: 1;
 }
 
-. gallery-icon-container .photo-container:hover + span,
-.gallery-icon-container a:hover span {
-    color: #333;
+/* Texto cambia al hover */
+.gallery-icon-container .photo-container:hover span {
+    color: #222;
+    transform: scale(1.08);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
 /* ============================================
@@ -381,7 +400,51 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
+/* ============================================
+   ANIMACIONES COMPLETAS
+   ============================================ */
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform:  translateY(40px) scale(0.9) rotate(0deg);
+    }
+    to {
+        opacity: 1;
+    }
+}
 
+@keyframes gentleFloat {
+    from {
+        opacity: 0;
+        transform:  translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        box-shadow: 
+            0 3px 10px rgba(0,0,0,0.2),
+            0 6px 20px rgba(0,0,0,0.15);
+    }
+    50% {
+        box-shadow: 
+            0 4px 12px rgba(0,0,0,0.22),
+            0 7px 22px rgba(0,0,0,0.17);
+        transform: translateY(-2px);
+    }
+}
+
+@keyframes softPulse {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.02); 
+    }
+}
 /* ============================================
    BOTÓN DE ADMINISTRACIÓN
    ============================================ */
