@@ -330,98 +330,90 @@ p {
 /* ============================================
    ROTACIONES POLAROID
    ============================================ */
-.gallery-icon-container a:nth-child(1) .photo-container { 
-    transform: rotate(-2.5deg); 
-    animation-delay:  0.1s; 
+.gallery-icon-container a:nth-child(1) .photo-container {
+    transform: rotate(-2.5deg);
+    animation-delay: 0.1s;
 }
 
-.gallery-icon-container a:nth-child(2) .photo-container { 
-    transform: rotate(1.8deg); 
-    animation-delay:  0.2s; 
+.gallery-icon-container a:nth-child(2) .photo-container {
+    transform: rotate(1.8deg);
+    animation-delay: 0.2s;
 }
 
-.gallery-icon-container a:nth-child(3) .photo-container { 
-    transform: rotate(-1.2deg); 
-    animation-delay:  0.3s; 
+. gallery-icon-container a:nth-child(3) .photo-container {
+    transform: rotate(-1.2deg);
+    animation-delay: 0.3s;
 }
 
-.gallery-icon-container a:nth-child(4) .photo-container { 
-    transform: rotate(2.2deg); 
-    animation-delay:  0.4s; 
+.gallery-icon-container a:nth-child(4) .photo-container {
+    transform: rotate(2.2deg);
+    animation-delay:  0.4s;
 }
 
-.gallery-icon-container a:nth-child(5) .photo-container { 
-    transform: rotate(-1.8deg); 
-    animation-delay:  0.5s; 
+.gallery-icon-container a:nth-child(5) .photo-container {
+    transform:  rotate(-1.8deg);
+    animation-delay: 0.5s;
 }
 
-.gallery-icon-container a:nth-child(6) .photo-container { 
-    transform: rotate(0.8deg); 
-    animation-delay:  0.6s; 
+.gallery-icon-container a:nth-child(6) .photo-container {
+    transform: rotate(0.8deg);
+    animation-delay: 0.6s;
 }
 
-.gallery-icon-container a:nth-child(7) .photo-container { 
-    transform: rotate(-2.2deg); 
-    animation-delay:  0.7s; 
+.gallery-icon-container a:nth-child(7) .photo-container {
+    transform: rotate(-2.2deg);
+    animation-delay: 0.7s;
 }
 
-.gallery-icon-container a:nth-child(8) .photo-container { 
-    transform: rotate(1.5deg); 
-    animation-delay:  0.8s; 
+.gallery-icon-container a:nth-child(8) .photo-container {
+    transform: rotate(1.5deg);
+    animation-delay: 0.8s;
 }
 
-.gallery-icon-container a:nth-child(9) .photo-container { 
-    transform: rotate(-0.8deg); 
-    animation-delay:  0.9s; 
+.gallery-icon-container a:nth-child(9) .photo-container {
+    transform: rotate(-0.8deg);
+    animation-delay: 0.9s;
 }
 
 /* ============================================
    EFECTO HOVER - MOVIMIENTO POLAROID
    ============================================ */
-.gallery-icon-container . photo-container:hover {
+.gallery-icon-container .photo-container:hover {
     transform: rotate(0deg) translateY(-15px) scale(1.15) !important;
-    box-shadow: 
-        0 15px 40px rgba(0,0,0,0.35),
-        0 20px 60px rgba(0,0,0,0.25);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35), 0 20px 60px rgba(0,0,0,0.25);
     z-index: 100;
     animation: none !important;
 }
 
 .gallery-icon-container .photo-container:active {
     transform: rotate(0deg) translateY(-5px) scale(1.08) !important;
-    box-shadow: 
-        0 8px 20px rgba(0,0,0,0.3),
-        0 12px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 12px 30px rgba(0,0,0,0.2);
     transition: all 0.15s ease !important;
 }
 
 /* Efecto de brillo al hover */
-.gallery-icon-container .photo-container:: before {
+.gallery-icon-container . photo-container:: before {
     content: '';
     position: absolute;
     top: 0;
     left:  0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.5) 0%,
-        rgba(255,255,255,0) 60%
-    );
+    background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 60%);
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none;
-    border-radius: 2px;
+    pointer-events:  none;
+    border-radius:  2px;
     z-index: 1;
 }
 
-.gallery-icon-container .photo-container:hover:: before {
+.gallery-icon-container .photo-container:hover::before {
     opacity: 1;
 }
 
 /* Texto se agranda al hover */
 .gallery-icon-container .photo-container:hover span {
-    color:  #222;
+    color: #222;
     transform: scale(1.08);
     text-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
@@ -435,7 +427,7 @@ p {
    ============================================ */
 @keyframes floatIn {
     from {
-        opacity:  0;
+        opacity: 0;
         transform: translateY(20px) rotate(0deg);
     }
     to {
@@ -446,7 +438,7 @@ p {
 @keyframes gentleFloat {
     from {
         opacity: 0;
-        transform: translateY(30px) scale(0.95);
+        transform:  translateY(30px) scale(0.95);
     }
     to {
         opacity: 1;
@@ -454,11 +446,11 @@ p {
 }
 
 @keyframes softPulse {
-    0%, 100% { 
-        transform: scale(1); 
+    0%, 100% {
+        transform: scale(1);
     }
-    50% { 
-        transform: scale(1.02); 
+    50% {
+        transform: scale(1.02);
     }
 }
 
