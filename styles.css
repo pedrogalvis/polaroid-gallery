@@ -79,27 +79,26 @@ p {
     font-weight: 500;
     line-height: 1.4;
 }
-
 /* ============================================
    FOTOS POLAROID - FOTO GRANDE
    ============================================ */
 .img-container .photo-container {
-    background:  #ffffff ! important;
+    background:  #ffffff !important;
     width: 325px;
     margin-left: auto;
     margin-right: auto;
-    padding: 12px 12px 45px 12px ! important;
-    transform: rotate(-1.05deg);
+    padding: 12px 12px 45px 12px !important;
+    transform:  rotate(-1.05deg);
     box-shadow: 
         0 4px 15px rgba(0,0,0,0.25),
         0 8px 30px rgba(0,0,0,0.2);
     position: relative;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition:  all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius:  2px;
 }
 
-.img-container .photo-container:hover {
+. img-container .photo-container:hover {
     transform: rotate(0deg) translateY(-12px) scale(1.05) !important;
     box-shadow:  
         0 15px 35px rgba(0,0,0,0.3),
@@ -107,22 +106,22 @@ p {
     z-index: 100;
 }
 
-.img-container .photo-container:active {
+. img-container .photo-container:active {
     transform: rotate(0deg) translateY(-3px) scale(1.02) !important;
     box-shadow:  
         0 5px 15px rgba(0,0,0,0.25),
         0 8px 25px rgba(0,0,0,0.15);
-    transition: all 0.1s ease ! important;
+    transition: all 0.1s ease !important;
 }
 
 /*imagen Colombia tipo polaroid*/
 .img-container .pic-thumbnail {
-    background: #ffffff !  important;
+    background: #ffffff !important;
     width: 301px;
     height: 301px;
-    background-image:  url("https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800") !important;
-    background-size: cover ! important;
-    background-position: center ! important;
+    background-image: url("https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800") !important;
+    background-size: cover !important;
+    background-position: center !important;
     border: 1px solid #cecece;
 }
 
@@ -132,7 +131,7 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    right:  0;
+    right: 0;
     bottom: 0;
     background: linear-gradient(
         135deg,
@@ -140,13 +139,13 @@ p {
         rgba(255,255,255,0) 60%
     );
     opacity: 0;
-    transition:  opacity 0.3s ease;
-    pointer-events:  none;
-    border-radius:  2px;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 2px;
 }
 
 .img-container .photo-container:hover::after {
-    opacity:  1;
+    opacity: 1;
 }
 
 /* ============================================
