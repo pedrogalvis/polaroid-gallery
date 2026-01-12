@@ -19,7 +19,7 @@ async function getGalleryDataFromFirebase() {
             data[doc.id] = doc.data().photos || [];
         });
         
-        console.log('✅ Galería cargada:', Object.keys(data).length, 'países');
+        console. log('✅ Galería cargada:', Object.keys(data).length, 'países');
         return data;
     } catch (error) {
         console.error('❌ Error al cargar galería:', error);
@@ -75,7 +75,7 @@ function compressImage(file, maxSizeKB = 800) {
                 canvas.width = width;
                 canvas.height = height;
                 const ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0, width, height);
+                ctx. drawImage(img, 0, 0, width, height);
                 
                 // Comprimir con calidad ajustable
                 let quality = 0.7;
@@ -98,16 +98,19 @@ function compressImage(file, maxSizeKB = 800) {
         reader.readAsDataURL(file);
     });
 }
+
 // ============================================
 // ACTUALIZAR BASE DE DATOS CON NUEVOS PAÍSES
 // ============================================
 async function updateFirebaseWithNewCountries() {
     try {
         const currentData = await getGalleryDataFromFirebase();
-        const newCountries = ["Turkiye", "Brazil", "Singapur"];
+        
+        // 🔧 CORREGIDO: Verificar TODOS los países en originalGalleryData
+        const allCountries = Object.keys(originalGalleryData);
         
         let needsUpdate = false;
-        newCountries.forEach(country => {
+        allCountries.forEach(country => {
             if (!currentData[country]) {
                 console.log(`➕ Agregando país nuevo: ${country}`);
                 currentData[country] = originalGalleryData[country];
@@ -118,10 +121,10 @@ async function updateFirebaseWithNewCountries() {
         if (needsUpdate) {
             console.log('🔄 Actualizando Firebase con nuevos países...');
             await saveGalleryDataToFirebase(currentData);
-            console.log('✅ Firebase actualizado con 10 países');
+            console.log(`✅ Firebase actualizado con ${allCountries.length} países`);
             return true;
         } else {
-            console.log('✅ Firebase ya tiene los 10 países');
+            console.log(`✅ Firebase ya tiene todos los ${allCountries.length} países`);
             return false;
         }
     } catch (error) {
