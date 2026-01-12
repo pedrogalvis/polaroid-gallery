@@ -777,3 +777,35 @@ document.getElementById('resetBtn').addEventListener('click', async function() {
         }
     }
 });
+// ============================================
+// 🔧 SCRIPT DE REPARACIÓN TEMPORAL - ELIMINAR DESPUÉS
+// ============================================
+(async function fixColombia() {
+    console.log('🔧 Iniciando reparación de Colombia...');
+    
+    // Esperar 2 segundos para que todo cargue
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    console.log('Países actuales:', Object.keys(galleryData));
+    
+    if (! galleryData["Colombia"] || galleryData["Colombia"].length === 0) {
+        console.log('⚠️ Colombia no existe, agregando...');
+        
+        galleryData["Colombia"] = [
+            { url: "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800", title: "Cartagena de Indias" },
+            { url: "https://images.unsplash.com/photo-1557167819-6925a6a00c0d?w=800", title:  "Guatapé - Piedra del Peñol" },
+            { url: "https://images.unsplash.com/photo-1590005176489-db2e714711fc? w=800", title: "Valle de Cocora" },
+            { url:  "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800", title: "Bogotá" },
+            { url: "https://images.unsplash.com/photo-1582719366154-96e435b1f6f2?w=800", title:  "Parque Tayrona" }
+        ];
+        
+        const saved = await saveGalleryDataToFirebase(galleryData);
+        
+        if (saved) {
+            alert('✅ COLOMBIA REPARADO\n\nLa página se recargará en 2 segundos');
+            setTimeout(() => location.reload(), 2000);
+        }
+    } else {
+        console.log('✅ Colombia ya existe con', galleryData["Colombia"].length, 'fotos');
+    }
+})();
