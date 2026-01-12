@@ -778,34 +778,42 @@ document.getElementById('resetBtn').addEventListener('click', async function() {
     }
 });
 // ============================================
-// 🔧 SCRIPT DE REPARACIÓN TEMPORAL - ELIMINAR DESPUÉS
+// 🔄 BOTÓN DE SINCRONIZACIÓN PERMANENTE
 // ============================================
-(async function fixColombia() {
-    console.log('🔧 Iniciando reparación de Colombia...');
-    
-    // Esperar 2 segundos para que todo cargue
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    console.log('Países actuales:', Object.keys(galleryData));
-    
-    if (! galleryData["Colombia"] || galleryData["Colombia"].length === 0) {
-        console.log('⚠️ Colombia no existe, agregando...');
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const backupTab = document.getElementById('backupTab');
         
-        galleryData["Colombia"] = [
-            { url: "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800", title: "Cartagena de Indias" },
-            { url: "https://images.unsplash.com/photo-1557167819-6925a6a00c0d?w=800", title:  "Guatapé - Piedra del Peñol" },
-            { url: "https://images.unsplash.com/photo-1590005176489-db2e714711fc? w=800", title: "Valle de Cocora" },
-            { url:  "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800", title: "Bogotá" },
-            { url: "https://images.unsplash.com/photo-1582719366154-96e435b1f6f2?w=800", title:  "Parque Tayrona" }
-        ];
-        
-        const saved = await saveGalleryDataToFirebase(galleryData);
-        
-        if (saved) {
-            alert('✅ COLOMBIA REPARADO\n\nLa página se recargará en 2 segundos');
-            setTimeout(() => location.reload(), 2000);
+        if (backupTab) {
+            const syncButton = document.createElement('button');
+            syncButton.className = 'btn';
+            syncButton.innerHTML = '🔄 Sincronizar con Datos Originales';
+            syncButton.style.backgroundColor = '#FF9800';
+            syncButton.style.marginTop = '20px';
+            syncButton.style.width = '100%';
+            
+            syncButton.addEventListener('click', async function() {
+                if (confirm('🔄 ¿Sincronizar con originalGalleryData?\n\nEsto actualizará Firebase con las fotos del código.\n\n¿Continuar?')) {
+                    syncButton.disabled = true;
+                    syncButton.textContent = 'Sincronizando...';
+                    
+                    try {
+                        galleryData = JSON.parse(JSON.stringify(originalGalleryData));
+                        const saved = await saveGalleryDataToFirebase(galleryData);
+                        
+                        if (saved) {
+                            alert('✅ SINCRONIZACIÓN EXITOSA\n\nRecargando página...');
+                            setTimeout(() => location.reload(), 1000);
+                        }
+                    } catch (error) {
+                        alert('❌ Error:  ' + error.message);
+                        syncButton.disabled = false;
+                        syncButton.textContent = '🔄 Sincronizar con Datos Originales';
+                    }
+                }
+            });
+            
+            backupTab. appendChild(syncButton);
         }
-    } else {
-        console.log('✅ Colombia ya existe con', galleryData["Colombia"].length, 'fotos');
-    }
-})();
+    }, 1000);
+});
