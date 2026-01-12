@@ -126,27 +126,18 @@ p {
     overflow: visible;
 }
 
-.img-container .pic-thumbnail:: before {
-    content: '';
-    display: block;
-    width: 100%;
-    height:  271px; /* 301 - 15 (top) - 15 (margen) */
+/*imagen Colombia tipo polaroid*/
+.img-container .pic-thumbnail {
+    background: #ffffff !important;
+    width: 301px;
+    height: 350px;
     background-image: url("https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800") !important;
-    background-size: cover !important;
-    background-position: center center !important;
+    background-size: 271px 271px !important; /* ← Imagen MÁS PEQUEÑA */
+    background-position: center top 15px !important; /* ← Posición ajustada */
     background-repeat: no-repeat !important;
-}
-
-.img-container span {
-    margin-top: 1.25rem;
-    margin-bottom: 0.75rem;
-    display: inline-block;
-    font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
-    color: #555555;
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 15px; /* ← Crea el marco blanco */
 }
 
 /* Efecto de brillo en foto grande */
