@@ -115,12 +115,13 @@ p {
 }
 
 /* ============================================
-   IMAGEN - Si es <img> tag
+   IMAGEN - Si es <img> tag Polaroid colombia
    ============================================ */
 /*imagen Colombia tipo polaroid*/
 .img-container .pic-thumbnail {
     width: 301px !important;
     height: 301px !important;
+   object-position: center center !important;
     background-image: url("https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800") !important;
     background-size: cover ! important;
     background-position:  center center !important;
