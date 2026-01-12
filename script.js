@@ -2,8 +2,21 @@
 // GALERÍA CON PANEL DE ADMINISTRACIÓN COMPLETO
 // ============================================
 
-// Contraseña admin (puedes cambiarla)
-const ADMIN_PASSWORD = 'admin123';
+// ============================================
+// 🔐 CONTRASEÑA ADMIN HASHEADA (SHA-256)
+// ============================================
+// Hash de:  admin123
+const ADMIN_PASSWORD_HASH = '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9';
+
+// Función para hashear contraseña
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+}
 
 // Base de datos de fotos original (Unsplash) - ACTUALIZADA CON 10 PAÍSES
 const originalGalleryData = {
@@ -285,10 +298,12 @@ closeLoginModal.addEventListener('click', () => {
     loginForm.reset();
 });
 
-loginForm.addEventListener('submit', (e) => {
+loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const password = document.getElementById('adminPassword').value;
-    if (password === ADMIN_PASSWORD) {
+    const hashedInput = await hashPassword(password);
+    
+    if (hashedInput === ADMIN_PASSWORD_HASH) {
         loginModal.style.display = 'none';
         adminModal.style.display = 'block';
         loginForm.reset();
