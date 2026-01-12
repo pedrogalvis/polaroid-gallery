@@ -239,7 +239,7 @@ p {
 }
 
 .gallery-icon-container a:nth-child(5) .pic-thumbnail {
-    background-image: url("https://images.unsplash.com/photo-1528493366314-e317cd98dd52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80") !important;
+    background-image: url("https://images.unsplash.com/photo-1578764442423-c21d36076af1?q=80&w=1047&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") !important;
     background-position: 25% center !important;
     background-size: cover !important;
 }
