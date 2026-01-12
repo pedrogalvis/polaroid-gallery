@@ -8,11 +8,11 @@ const ADMIN_PASSWORD = 'admin123';
 // Base de datos de fotos original (Unsplash) - ACTUALIZADA CON 10 PAÍSES
 const originalGalleryData = {
     "Colombia": [
-    { url:   "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800", title: "Cartagena Historic Center" },
-    { url:  "https://images.unsplash.com/photo-1557167819-6925a6a00c0d?w=800", title:   "Guatapé Colorful Streets" },
-    { url: "https://images.unsplash.com/photo-1590005176489-db2e714711fc?w=800", title: "Cocora Valley Palm Trees" },
-    { url:   "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800", title: "Bogotá Skyline" },
-    { url: "https://images.unsplash.com/photo-1582719366154-96e435b1f6f2?w=800", title: "Tayrona National Park" }
+    { url:   "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800", title: "Bogotá Historic Center" },
+    { url:  "https://images.unsplash.com/photo-1582568742002-499ac33758ce?w=800", title:   "Guatapé Colorful Streets" },
+    { url: "https://images.unsplash.com/photo-1532185922611-3410b1898a1c?w=800", title: "Cocora Valley Palm Trees" },
+    { url:   "https://images.unsplash.com/photo-1586661729365-8d49aa375f64?w=800", title: "Cartagena Skyline" },
+    { url: "https://images.unsplash.com/photo-1681854534969-80bfa03152dd?w=800", title: "Tayrona National Park" }
 ],
     "Spain":   [
         { url: "https://images.unsplash.com/photo-1495653089282-38a5286a8583?w=800", title: "Alhambra, Granada" },
