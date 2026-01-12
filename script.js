@@ -7,7 +7,7 @@ const ADMIN_PASSWORD = 'admin123';
 
 // Base de datos de fotos original (Unsplash) - ACTUALIZADA CON 10 PAÍSES
 const originalGalleryData = {
-    "United States": [
+    "Colombia": [
         { url: "https://images.unsplash.com/photo-1540155945626-66eacf57fcb9?w=800", title: "Hollywood Sign, Los Angeles" },
         { url: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=800", title: "Golden Gate Bridge" },
         { url: "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=800", title: "New York City" },
@@ -528,7 +528,7 @@ if (importBtn) {
         reader.onload = function(e) {
             try {
                 const imported = JSON.parse(e.target.result);
-                const requiredCountries = ["United States", "Spain", "Italy", "Portugal", "France", "Switzerland", "Chile", "Turkiye", "Brazil", "Singapur"];
+                const requiredCountries = ["Colombia", "Spain", "Italy", "Portugal", "France", "Switzerland", "Chile", "Turkiye", "Brazil", "Singapur"];
                 const isValid = requiredCountries.every(country => imported[country] && Array.isArray(imported[country]));
                 
                 if (! isValid) throw new Error('Estructura de archivo inválida');
