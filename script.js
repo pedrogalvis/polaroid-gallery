@@ -8,66 +8,66 @@ const ADMIN_PASSWORD = 'admin123';
 // Base de datos de fotos original (Unsplash) - ACTUALIZADA CON 10 PAÍSES
 const originalGalleryData = {
     "Colombia": [
-    { url:  "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800", title: "Cartagena Historic Center" },
-    { url: "https://images.unsplash.com/photo-1557167819-6925a6a00c0d?w=800", title:  "Guatapé Colorful Streets" },
+    { url:   "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800", title: "Cartagena Historic Center" },
+    { url:  "https://images.unsplash.com/photo-1557167819-6925a6a00c0d?w=800", title:   "Guatapé Colorful Streets" },
     { url: "https://images.unsplash.com/photo-1590005176489-db2e714711fc?w=800", title: "Cocora Valley Palm Trees" },
-    { url:  "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800", title: "Bogotá Skyline" },
+    { url:   "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800", title: "Bogotá Skyline" },
     { url: "https://images.unsplash.com/photo-1582719366154-96e435b1f6f2?w=800", title: "Tayrona National Park" }
 ],
-    "Spain":  [
+    "Spain":   [
         { url: "https://images.unsplash.com/photo-1495653089282-38a5286a8583?w=800", title: "Alhambra, Granada" },
-        { url: "https://images.unsplash.com/photo-1558642891-54be180ea339?w=800", title: "Barcelona Skyline" },
-        { url:  "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800", title: "Madrid Royal Palace" },
-        { url:  "https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=800", title: "Seville Cathedral" },
+        { url:  "https://images.unsplash.com/photo-1558642891-54be180ea339?w=800", title: "Barcelona Skyline" },
+        { url:   "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800", title: "Madrid Royal Palace" },
+        { url:   "https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=800", title: "Seville Cathedral" },
         { url:  "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800", title: "Valencia City" }
     ],
-    "Italy": [
-        { url:  "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=800", title: "Vernazza, Cinque Terre" },
-        { url: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800", title: "Colosseum, Rome" },
-        { url: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800", title: "Venice Canals" },
-        { url: "https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800", title: "Florence Duomo" },
-        { url: "https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=800", title:  "Amalfi Coast" }
+    "Italy":  [
+        { url:   "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=800", title: "Vernazza, Cinque Terre" },
+        { url:  "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800", title: "Colosseum, Rome" },
+        { url:  "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800", title: "Venice Canals" },
+        { url:  "https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800", title: "Florence Duomo" },
+        { url:  "https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=800", title:   "Amalfi Coast" }
     ],
     "Portugal": [
         { url: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=800", title: "Benagil Cave, Algarve" },
         { url: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800", title: "Lisbon Trams" },
         { url: "https://images.unsplash.com/photo-1513735492246-483525079686?w=800", title: "Porto Riverside" },
-        { url: "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800", title: "Sintra Palace" },
+        { url:  "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800", title: "Sintra Palace" },
         { url: "https://images.unsplash.com/photo-1588963014962-e6f45c7c7fc7?w=800", title: "Lagos Beach" }
     ],
     "France": [
-        { url:  "https://images.unsplash.com/photo-1572907564143-ee1ef5882732?w=800", title: "Lavender Fields, Provence" },
+        { url:   "https://images.unsplash.com/photo-1572907564143-ee1ef5882732?w=800", title: "Lavender Fields, Provence" },
         { url: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=800", title: "Eiffel Tower, Paris" },
         { url: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800", title: "Arc de Triomphe" },
-        { url: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800", title:  "Paris Streets" },
+        { url: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800", title:   "Paris Streets" },
         { url: "https://images.unsplash.com/photo-1549144511-f099e773c147?w=800", title: "Mont Saint-Michel" }
     ],
     "Switzerland": [
-        { url: "https://images.unsplash.com/photo-1528493366314-e317cd98dd52?w=800", title: "Matterhorn, Zermatt" },
+        { url:  "https://images.unsplash.com/photo-1528493366314-e317cd98dd52?w=800", title: "Matterhorn, Zermatt" },
         { url: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800", title: "Swiss Alps" },
-        { url:  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", title: "Lake Lucerne" },
-        { url: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800", title: "Interlaken" },
+        { url:   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", title:  "Lake Lucerne" },
+        { url:  "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800", title: "Interlaken" },
         { url: "https://images.unsplash.com/photo-1548678967-f1aec58f6fb2?w=800", title: "Zurich City" }
     ],
     "Chile": [
         { url:  "https://images.unsplash.com/photo-1603382585507-45205571d760?w=800", title: "Torres del Paine" },
-        { url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", title: "Atacama Desert" },
+        { url:  "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", title: "Atacama Desert" },
         { url: "https://images.unsplash.com/photo-1591802020165-c0a1eba35c52?w=800", title: "Santiago Skyline" },
-        { url:  "https://images.unsplash.com/photo-1570737231183-4c162a1cb0f4?w=800", title: "Valparaíso Streets" },
+        { url:   "https://images.unsplash.com/photo-1570737231183-4c162a1cb0f4?w=800", title:  "Valparaíso Streets" },
         { url: "https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=800", title: "Chilean Fjords" }
     ],
     "Turkiye": [
-        { url: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800", title: "Hot Air Balloons, Cappadocia" },
+        { url:  "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800", title: "Hot Air Balloons, Cappadocia" },
         { url: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800", title: "Hagia Sophia, Istanbul" },
         { url: "https://images.unsplash.com/photo-1564424224827-cd24a459efb6?w=800", title: "Pamukkale Terraces" },
-        { url:  "https://images.unsplash.com/photo-1577926569966-e8d7a8e5d0c0?w=800", title: "Blue Mosque, Istanbul" },
-        { url: "https://images.unsplash.com/photo-1605627079912-1e3e8b6e9c3b?w=800", title:  "Ephesus Ancient City" }
+        { url:   "https://images.unsplash.com/photo-1577926569966-e8d7a8e5d0c0?w=800", title: "Blue Mosque, Istanbul" },
+        { url: "https://images.unsplash.com/photo-1605627079912-1e3e8b6e9c3b?w=800", title:   "Ephesus Ancient City" }
     ],
     "Brazil": [
-        { url: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800", title: "Christ the Redeemer, Rio" },
+        { url:  "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800", title: "Christ the Redeemer, Rio" },
         { url: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800", title: "Ipanema Beach, Rio" },
-        { url: "https://images.unsplash.com/photo-1548013146-72479768bada?w=800", title: "Amazon Rainforest" },
-        { url: "https://images.unsplash.com/photo-1621532148672-30ed695e8cb3?w=800", title:  "Iguazu Falls" },
+        { url:  "https://images.unsplash.com/photo-1548013146-72479768bada?w=800", title: "Amazon Rainforest" },
+        { url: "https://images.unsplash.com/photo-1621532148672-30ed695e8cb3?w=800", title:   "Iguazu Falls" },
         { url: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800", title: "São Paulo Skyline" }
     ],
     "Singapur": [
@@ -85,13 +85,13 @@ function getGalleryData() {
 }
 
 function saveGalleryData(data) {
-    localStorage.setItem('galleryData', JSON. stringify(data));
+    localStorage.setItem('galleryData', JSON.stringify(data));
 }
 
 function showToast(message, type = 'success') {
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
-    const icons = { success: '✅', error:  '❌', warning: '⚠️', info: 'ℹ️' };
+    const icons = { success: '✅', error:   '❌', warning: '⚠️', info: 'ℹ️' };
     toast.innerHTML = `<span style="font-size: 1.3em; margin-right: 10px;">${icons[type]}</span> ${message}`;
     document.body.appendChild(toast);
     setTimeout(() => {
@@ -121,7 +121,7 @@ function updateCountryPhotoCounts() {
         if (select) {
             Array.from(select.options).forEach(option => {
                 if (option.value && galleryData[option.value]) {
-                    const count = galleryData[option. value].length;
+                    const count = galleryData[option.value].length;
                     const baseText = option.value;
                     option.textContent = `${baseText} (${count} ${count === 1 ? 'foto' : 'fotos'})`;
                 }
@@ -132,11 +132,20 @@ function updateCountryPhotoCounts() {
 
 let galleryData = {};
 
-// Cargar galería desde Firebase al iniciar
+// 🔧 CORREGIDO: Cargar galería desde Firebase al iniciar
 (async function initGallery() {
     try {
         galleryData = await getGalleryDataFromFirebase();
+        
+        // 🔧 NUEVO: Si Firebase no tiene Colombia, agregarlo desde originalGalleryData
+        if (!galleryData["Colombia"]) {
+            console.log('⚠️ Colombia no existe en Firebase, agregándolo desde datos originales');
+            galleryData["Colombia"] = JSON.parse(JSON.stringify(originalGalleryData["Colombia"]));
+            await saveGalleryDataToFirebase(galleryData); // Guardar en Firebase
+        }
+        
         console.log('✅ Galería lista con', Object.keys(galleryData).length, 'países');
+        console.log('✅ Colombia tiene', galleryData["Colombia"]?.length || 0, 'fotos');
     } catch (error) {
         console.error('Error al inicializar:', error);
         galleryData = JSON.parse(JSON.stringify(originalGalleryData));
@@ -153,11 +162,11 @@ const modalCountryName = document.getElementById('modalCountryName');
 const photoCounter = document.getElementById('photoCounter');
 const thumbnailsContainer = document.getElementById('thumbnailsContainer');
 const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+const nextBtn = document. getElementById('nextBtn');
 const openAdminBtn = document.getElementById('openAdminBtn');
 const loginModal = document.getElementById('loginModal');
 const closeLoginModal = document.getElementById('closeLoginModal');
-const loginForm = document. getElementById('loginForm');
+const loginForm = document.getElementById('loginForm');
 const adminModal = document.getElementById('adminModal');
 const closeAdminModal = document.getElementById('closeAdminModal');
 
@@ -171,6 +180,7 @@ document.querySelectorAll('a[data-country]').forEach(link => {
     });
 });
 
+// 🔧 CORREGIDO: Función para abrir galería de país
 async function openCountryGallery(country) {
     currentCountry = country;
     currentPhotoIndex = 0;
@@ -181,11 +191,33 @@ async function openCountryGallery(country) {
     // Recargar desde Firebase
     galleryData = await getGalleryDataFromFirebase();
     
+    // 🔧 NUEVO: Si el país no existe en Firebase, usar originalGalleryData como respaldo
+    if (!galleryData[country] || galleryData[country].length === 0) {
+        console.log(`⚠️ ${country} no tiene fotos en Firebase, usando datos originales`);
+        if (originalGalleryData[country]) {
+            galleryData[country] = JSON.parse(JSON.stringify(originalGalleryData[country]));
+            await saveGalleryDataToFirebase(galleryData); // Guardar en Firebase
+        } else {
+            showToast(`❌ No hay fotos disponibles para ${country}`, 'error');
+            countryModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            return;
+        }
+    }
+    
     loadGalleryPhotos();
 }
 
 function loadGalleryPhotos() {
     const photos = galleryData[currentCountry];
+    
+    // 🔧 NUEVO:  Verificar que existan fotos antes de cargar
+    if (!photos || photos.length === 0) {
+        console.error(`❌ No hay fotos para ${currentCountry}`);
+        thumbnailsContainer.innerHTML = '<p style="color: white; text-align: center;">No hay fotos disponibles</p>';
+        return;
+    }
+    
     updateMainPhoto();
     thumbnailsContainer.innerHTML = '';
     photos.forEach((photo, index) => {
@@ -215,7 +247,7 @@ function updateMainPhoto() {
 
 prevBtn.addEventListener('click', () => {
     const photos = galleryData[currentCountry];
-    currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+    currentPhotoIndex = (currentPhotoIndex - 1 + photos. length) % photos.length;
     updateMainPhoto();
 });
 
@@ -239,7 +271,7 @@ closeCountryModalBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('click', (e) => {
-    if (e. target === countryModal) closeCountryModalBtn.click();
+    if (e.target === countryModal) closeCountryModalBtn.click();
     if (e.target === loginModal) closeLoginModal.click();
     if (e.target === adminModal) closeAdminModal.click();
 });
@@ -275,9 +307,9 @@ closeAdminModal.addEventListener('click', () => {
 document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList. remove('active'));
         btn.classList.add('active');
-        const tabId = btn.dataset.tab + 'Tab';
+        const tabId = btn.dataset. tab + 'Tab';
         const tabElement = document.getElementById(tabId);
         if (tabElement) tabElement.classList.add('active');
     });
@@ -295,7 +327,7 @@ if (uploadPhotoFile) {
         }
         
         if (file.size > 5 * 1024 * 1024) {
-            showToast('Imagen muy grande.  Máximo 5MB', 'error');
+            showToast('Imagen muy grande. Máximo 5MB', 'error');
             this.value = '';
             previewContainer.innerHTML = '';
             return;
@@ -343,7 +375,7 @@ if (uploadPhotoForm) {
         
         const submitBtn = e.target.querySelector('button[type="submit"]');
         const country = document.getElementById('uploadCountry').value;
-        const file = document. getElementById('uploadPhotoFile').files[0];
+        const file = document.getElementById('uploadPhotoFile').files[0];
         const title = document.getElementById('uploadPhotoTitle').value.trim();
         
         if (! country) {
@@ -433,7 +465,7 @@ if (manageCountry) {
         const photos = galleryData[country];
         
         if (photos.length === 0) {
-            container.innerHTML = `<div class="empty-state-manage"><p style="font-size:  3rem;">📷</p><p>No hay fotos en ${country}</p><p style="font-size: 0.9rem; margin-top: 10px;">Ve a la pestaña "Subir Fotos" para añadir imágenes</p></div>`;
+            container.innerHTML = `<div class="empty-state-manage"><p style="font-size: 3rem;">📷</p><p>No hay fotos en ${country}</p><p style="font-size: 0.9rem; margin-top: 10px;">Ve a la pestaña "Subir Fotos" para añadir imágenes</p></div>`;
             return;
         }
         
@@ -460,7 +492,7 @@ window.downloadPhoto = function(country, index) {
         window.open(photo.url, '_blank');
         showToast('Abriendo foto en nueva pestaña', 'info');
     } else {
-        const link = document. createElement('a');
+        const link = document.createElement('a');
         link.href = photo.url;
         link.download = `${country. replace(/\s+/g, '-')}-${photo.title. replace(/\s+/g, '-')}.jpg`;
         link.click();
@@ -531,7 +563,7 @@ if (importBtn) {
                 const requiredCountries = ["Colombia", "Spain", "Italy", "Portugal", "France", "Switzerland", "Chile", "Turkiye", "Brazil", "Singapur"];
                 const isValid = requiredCountries.every(country => imported[country] && Array.isArray(imported[country]));
                 
-                if (! isValid) throw new Error('Estructura de archivo inválida');
+                if (!isValid) throw new Error('Estructura de archivo inválida');
                 
                 galleryData = imported;
                 saveGalleryData(galleryData);
@@ -566,7 +598,7 @@ if (resetBtn) {
 // FUNCIONALIDAD DE TABS
 // ============================================
 
-document. querySelectorAll('.tab-btn').forEach(btn => {
+document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const tabName = this.getAttribute('data-tab');
         
@@ -594,7 +626,7 @@ async function loadManagePhotos() {
     const container = document.getElementById('managePhotosContainer');
     
     if (!country) {
-        container.innerHTML = '<p style="color: #999; text-align: center; padding: 40px;">📍 Selecciona un país para ver sus fotos</p>';
+        container. innerHTML = '<p style="color: #999; text-align: center; padding: 40px;">📍 Selecciona un país para ver sus fotos</p>';
         return;
     }
     
@@ -637,11 +669,11 @@ window.deletePhotoFromManage = async function(country, index) {
             // Si está viendo ese país en el modal, actualizar
             if (currentCountry === country && countryModal.style.display === 'block') {
                 galleryData = await getGalleryDataFromFirebase();
-                if (galleryData[country]. length > 0) {
-                    currentPhotoIndex = Math. min(currentPhotoIndex, galleryData[country].length - 1);
+                if (galleryData[country].length > 0) {
+                    currentPhotoIndex = Math.min(currentPhotoIndex, galleryData[country].length - 1);
                     loadGalleryPhotos();
                 } else {
-                    countryModal. style.display = 'none';
+                    countryModal.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }
             }
@@ -657,7 +689,7 @@ document.getElementById('manageCountry').addEventListener('change', loadManagePh
 // ============================================
 
 // Exportar galería
-document.getElementById('exportBtn').addEventListener('click', async function() {
+document. getElementById('exportBtn').addEventListener('click', async function() {
     try {
         galleryData = await getGalleryDataFromFirebase();
         
