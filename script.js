@@ -64,7 +64,7 @@ const originalGalleryData = {
     ],
     "Chile": [
         { url:  "https://images.unsplash.com/photo-1603382585507-45205571d760?w=800", title: "Torres del Paine" },
-        { url:  "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", title: "Atacama Desert" },
+        { url:  "https://images.unsplash.com/photo-1729885936843-ddf9637140c7?w=800", title: "Atacama Desert" },
         { url: "https://images.unsplash.com/photo-1721398899108-97dcf4c9ec5f?w=800", title: "Santiago Skyline" },
         { url:   "https://images.unsplash.com/photo-1629537745251-57c3bc5b8670?w=800", title:  "Valparaíso Streets" },
         { url: "https://images.unsplash.com/photo-1713017769963-07f2fd97ae95?w=800", title: "Chilean Fjords" }
