@@ -128,16 +128,14 @@ p {
 
 /*imagen Colombia tipo polaroid*/
 .img-container .pic-thumbnail {
-    background: #ffffff !important;
+    background: #ffffff ! important;
     width: 301px;
-    height: 350px;
+    height: 301px;
     background-image: url("https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=800") !important;
-    background-size: 271px 271px !important; /* ← Imagen MÁS PEQUEÑA */
-    background-position: center top 15px !important; /* ← Posición ajustada */
-    background-repeat: no-repeat !important;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    padding: 15px; /* ← Crea el marco blanco */
+    background-size: cover ! important;
+    background-position: center center ! important;
+    background-repeat:  no-repeat ! important;
+    border: 1px solid #cecece;
 }
 
 /* Efecto de brillo en foto grande */
