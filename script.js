@@ -60,7 +60,7 @@ const originalGalleryData = {
         { url: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800", title: "Swiss Alps" },
         { url:   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", title:  "Lake Lucerne" },
         { url:  "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800", title: "Interlaken" },
-        { url: "https://images.unsplash.com/photo-1548678967-f1aec58f6fb2?w=800", title: "Zurich City" }
+        { url: "https://images.unsplash.com/photo-1753742931163-addcbe4b19ea?w=800", title: "Zurich City" }
     ],
     "Chile": [
         { url:  "https://images.unsplash.com/photo-1603382585507-45205571d760?w=800", title: "Torres del Paine" },
