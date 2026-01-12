@@ -33,7 +33,7 @@ const originalGalleryData = {
         { url: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800", title: "Lisbon Trams" },
         { url: "https://images.unsplash.com/photo-1513735492246-483525079686?w=800", title: "Porto Riverside" },
         { url:  "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800", title: "Sintra Palace" },
-        { url: "https://images.unsplash.com/photo-1588963014962-e6f45c7c7fc7?w=800", title: "Lagos Beach" }
+        { url: "https://images.unsplash.com/photo-1630061945673-6b40216122de?w=800", title: "Madeira Islands" }
     ],
     "France": [
         { url:   "https://images.unsplash.com/photo-1572907564143-ee1ef5882732?w=800", title: "Lavender Fields, Provence" },
@@ -52,30 +52,30 @@ const originalGalleryData = {
     "Chile": [
         { url:  "https://images.unsplash.com/photo-1603382585507-45205571d760?w=800", title: "Torres del Paine" },
         { url:  "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", title: "Atacama Desert" },
-        { url: "https://images.unsplash.com/photo-1591802020165-c0a1eba35c52?w=800", title: "Santiago Skyline" },
-        { url:   "https://images.unsplash.com/photo-1570737231183-4c162a1cb0f4?w=800", title:  "Valparaíso Streets" },
-        { url: "https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=800", title: "Chilean Fjords" }
+        { url: "https://images.unsplash.com/photo-1721398899108-97dcf4c9ec5f?w=800", title: "Santiago Skyline" },
+        { url:   "https://images.unsplash.com/photo-1629537745251-57c3bc5b8670?w=800", title:  "Valparaíso Streets" },
+        { url: "https://images.unsplash.com/photo-1713017769963-07f2fd97ae95?w=800", title: "Chilean Fjords" }
     ],
     "Turkiye": [
-        { url:  "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800", title: "Hot Air Balloons, Cappadocia" },
+        { url:  "https://images.unsplash.com/photo-1677653794818-1afec11b70c6?w=800", title: "Hot Air Balloons, Cappadocia" },
         { url: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800", title: "Hagia Sophia, Istanbul" },
-        { url: "https://images.unsplash.com/photo-1564424224827-cd24a459efb6?w=800", title: "Pamukkale Terraces" },
-        { url:   "https://images.unsplash.com/photo-1577926569966-e8d7a8e5d0c0?w=800", title: "Blue Mosque, Istanbul" },
-        { url: "https://images.unsplash.com/photo-1605627079912-1e3e8b6e9c3b?w=800", title:   "Ephesus Ancient City" }
+        { url: "https://images.unsplash.com/photo-1762271458678-935b239fd245?w=800", title: "Pamukkale Terraces" },
+        { url:   "https://images.unsplash.com/photo-1648723970082-15ae618d5a89?w=800", title: "Bosphorus Bridge, Istanbul" },
+        { url: "https://images.unsplash.com/photo-1635166045025-b078ac986d77?w=800", title:   "Ephesus Ancient City" }
     ],
     "Brazil": [
         { url:  "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800", title: "Christ the Redeemer, Rio" },
         { url: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800", title: "Ipanema Beach, Rio" },
-        { url:  "https://images.unsplash.com/photo-1548013146-72479768bada?w=800", title: "Amazon Rainforest" },
-        { url: "https://images.unsplash.com/photo-1621532148672-30ed695e8cb3?w=800", title:   "Iguazu Falls" },
-        { url: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800", title: "São Paulo Skyline" }
+        { url:  "https://images.unsplash.com/photo-1753752837596-97affe5040b4?w=800", title: "Amazon Rainforest" },
+        { url: "https://images.unsplash.com/photo-1662906129343-604b886236c1?w=800", title:   "Iguazu Falls" },
+        { url: "https://images.unsplash.com/photo-1572894234976-d961418c709d?w=800", title: "São Paulo Skyline" }
     ],
     "Singapur": [
         { url: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800", title: "Marina Bay Sands" },
-        { url: "https://images.unsplash.com/photo-1562786101-ee1fc6461454?w=800", title: "Gardens by the Bay" },
+        { url: "https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=800", title: "Gardens by the Bay" },
         { url: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=800", title: "Merlion Park" },
-        { url: "https://images.unsplash.com/photo-1590947194033-77582a5de990?w=800", title: "Chinatown Singapore" },
-        { url: "https://images.unsplash.com/photo-1551844931-59df97ec1f77?w=800", title: "Singapore Skyline Night" }
+        { url: "https://images.unsplash.com/photo-1536163713675-42cf53cbd4f5?w=800", title: "Chinatown Singapore" },
+        { url: "https://images.unsplash.com/photo-1702085241351-cc35875d9bdb?w=800", title: "Singapore Skyline Night" }
     ]
 };
 
