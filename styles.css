@@ -22,9 +22,10 @@
    ============================================ */
 body {
     min-height: 100vh;
-    background: url("https://unsplash.com/es/fotos/agua-cristalina-del-oceano-en-una-playa-de-arena-j2INaFJ1dLc");
+    background: url("https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1600");
     background-size: cover;
     background-position: center 40%;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
 }
