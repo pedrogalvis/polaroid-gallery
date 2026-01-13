@@ -29,7 +29,7 @@ const originalGalleryData = {
 ],
     "Spain":   [
         { url: "https://images.unsplash.com/photo-1495653089282-38a5286a8583?w=800", title: "Alhambra, Granada" },
-        { url:  "https://images.unsplash.com/photo-1558642891-54be180ea339?w=800", title: "Barcelona Skyline" },
+        { url:  "https://images.unsplash.com/photo-1620246017525-16fc1ed2859b?w=800", title: "Barcelona Skyline" },
         { url:   "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800", title: "Madrid Royal Palace" },
         { url:   "https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=800", title: "Seville Cathedral" },
         { url:  "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800", title: "Valencia City" }
